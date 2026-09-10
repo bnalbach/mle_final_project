@@ -1,2 +1,2 @@
-# Final Project for Machine Learing Essentials SS2026
+# Final Project for Machine Learning Essentials SS2026
 
