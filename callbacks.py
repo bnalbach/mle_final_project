@@ -317,36 +317,41 @@ def _direction_has_safe_reachable(game_state, position, direction):
 
 
 def _direction_has_safe_reachable_after_bomb(game_state, position, direction, max_steps=None):
-    """True if stepping `direction` from `position` (right after placing a
-    bomb there) leads to a tile from which a SAFE tile is reachable WITHIN
-    max_steps further moves (time-aware, not just "reachable eventually").
+    """Return whether `direction` starts a route escaping a bomb placed now.
+
+    BFS examines every free tile reachable before detonation. Tiles in the
+    new bomb's future blast zone may be traversed before it explodes, but the
+    final destination must be outside that blast zone.
     """
     if max_steps is None:
-        max_steps = BOMB_TIMER - 1
+        # The BOMB action already advances the engine once: the new bomb is
+        # observed with timer BOMB_TIMER - 1. The first escape move is handled
+        # separately below, leaving BOMB_TIMER - 2 additional BFS moves.
+        max_steps = BOMB_TIMER - 2
 
     field = game_state["field"]
     dx, dy = MOVE_DELTAS[direction]
-
     first_step = (position[0] + dx, position[1] + dy)
 
     if not _inside(field, first_step):
         return False
-
     if field[first_step[0], first_step[1]] != 0:
         return False
 
-    dangerous = _danger_cells(game_state)
-    dangerous |= _bomb_blast_cells(field, position)
+    existing_danger = _danger_cells(game_state)
+    own_blast = _bomb_blast_cells(field, position)
 
-    if first_step in dangerous:
+    # Existing danger is unsafe now. own_blast is only unsafe at detonation.
+    if first_step in existing_danger:
         return False
 
     others = {item[3] for item in game_state.get("others", [])}
-
     reachable = _reachable_distances(field, first_step, others)
 
     return any(
-        tile not in dangerous and distance <= max_steps
+        tile not in existing_danger
+        and tile not in own_blast
+        and distance <= max_steps
         for tile, distance in reachable.items()
     )
 
@@ -380,6 +385,17 @@ def _position_can_survive(game_state, position, max_steps):
         tile not in dangerous and distance <= max_steps
         for tile, distance in reachable.items()
     )
+
+
+
+def _can_escape_active_bombs(game_state, position):
+    """Whether `position` still has a route out before the earliest active
+    bomb threatening it detonates.
+    """
+    deadline = _minimum_bomb_timer_at_position(game_state, position)
+    if deadline == 99:
+        return True
+    return _position_can_survive(game_state, position, deadline)
 
 
 def valid_actions(game_state):

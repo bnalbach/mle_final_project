@@ -19,6 +19,7 @@ from .callbacks import (
     QNetwork,
     _bomb_has_any_safe_direction,
     _bomb_would_hit_crate,
+    _can_escape_active_bombs,
     _count_crates_bomb_would_hit,
     _direction_has_safe_reachable_after_bomb,
     _distance_to_nearest_bomb,
@@ -68,13 +69,13 @@ DEBUG_LOG_EVERY_N_DEATHS = 10
 # --------------------------------------------------------------------------
 PENALTY_STEP = -0.001
 
-REWARD_COIN_COLLECTED = 5.0
-REWARD_COIN_DIRECTION = 0.1
-REWARD_COIN_FOUND = 0.5
+REWARD_COIN_COLLECTED = 10.0
+REWARD_COIN_DIRECTION = 0.2
+REWARD_COIN_FOUND = 0.2
 
-REWARD_MOVED_CLOSER = 1.0
-PENALTY_MOVED_AWAY_FROM_COIN = -0.5
-PENALTY_NO_COIN_PROGRESS = -0.05
+REWARD_MOVED_CLOSER = 1.5
+PENALTY_MOVED_AWAY_FROM_COIN = -0.75
+PENALTY_NO_COIN_PROGRESS = -0.1
 
 PENALTY_INVALID_ACTION = -5.0
 PENALTY_WAIT = -0.2
@@ -123,7 +124,7 @@ if TRAINING_MODE >= 2:
     # full per-crate reward.
     # --------------------------------------------------------------------
     PENALTY_BOMB_BASELINE = 0  # mild, applies to every bomb placement
-    REWARD_SAFE_CRATE_HIT = 3.0  # per crate, only paid if the bomb was safe
+    REWARD_SAFE_CRATE_HIT = 2.0  # per crate, only paid if the bomb was safe
     PENALTY_BOMB_NO_SAFE_ESCAPE = -12.0  # additional, on top of baseline,
     # if no safe escape exists.
     PENALTY_BOMB_NEAR_COIN = -5.0
@@ -403,51 +404,38 @@ def _bomb_placement_reward(game_state, position):
     return reward, predicted_crates, is_safe
 
 
-def _bomb_direction_guidance_reward(old_game_state, old_position, self_action):
-    old_timer = _minimum_bomb_timer_at_position(old_game_state, old_position)
+def _active_bomb_escape_reward(
+    self,
+    old_game_state,
+    old_position,
+    new_game_state,
+    new_position,
+    self_action,
+):
+    """Assign feedback to the action that preserves or loses an escape route.
 
-    if old_timer == 99:
-        return 0.0
-
-    if self_action not in MOVE_DELTAS or self_action == "WAIT":
-        return 0.0
-
-    safety_by_direction = {
-        direction: _direction_has_safe_reachable_after_bomb(old_game_state, old_position, direction)
-        for direction in ["UP", "DOWN", "LEFT", "RIGHT"]
-    }
-
-    if not any(safety_by_direction.values()):
-        return 0.0
-
-    if safety_by_direction.get(self_action, False):
-        return REWARD_CHOSE_SAFE_DIRECTION
-
-    return PENALTY_IGNORED_SAFE_DIRECTION
-
-
-def _lost_escape_route_penalty(self, old_game_state, old_position):
-    """Fires when the agent's situation flips from "a safe tile is
-    reachable in time" to "no longer reachable in time" between two
-    steps that both had an active bomb threatening old_position.
+    The states immediately before and after the same action are compared. A
+    penalty therefore belongs to the exact movement (or WAIT) that changes a
+    previously survivable situation into an unsurvivable one.
     """
-    old_remaining = _maximum_bomb_timer_at_position(old_game_state, old_position)
-
-    if old_remaining == 99:
+    deadline = _minimum_bomb_timer_at_position(old_game_state, old_position)
+    if deadline == 99:
         return 0.0
 
-    survivable_before = _position_can_survive(old_game_state, old_position, old_remaining)
+    was_survivable = _can_escape_active_bombs(old_game_state, old_position)
+    is_survivable = _can_escape_active_bombs(new_game_state, new_position)
 
-    penalty = 0.0
+    if was_survivable and not is_survivable:
+        reward = PENALTY_LOST_ESCAPE_ROUTE
+    elif was_survivable and is_survivable and self_action != "WAIT":
+        reward = REWARD_CHOSE_SAFE_DIRECTION
+    else:
+        reward = 0.0
 
-    if self.last_survivable_before is True and not survivable_before:
-        penalty = PENALTY_LOST_ESCAPE_ROUTE
-
-    self.survivability_trail_this_round.append((old_remaining, survivable_before, penalty))
-
-    self.last_survivable_before = survivable_before
-
-    return penalty
+    self.survivability_trail_this_round.append(
+        (deadline, was_survivable, is_survivable, self_action, reward)
+    )
+    return reward
 
 
 def reward_from_transition(
@@ -522,6 +510,36 @@ def reward_from_transition(
 
         if coin_distance_before_bomb <= 1:
             reward += PENALTY_BOMB_NEAR_COIN
+
+        safe_directions_before = {
+            direction: _direction_has_safe_reachable_after_bomb(
+                old_game_state,
+                old_position,
+                direction,
+            )
+            for direction in ["UP", "DOWN", "LEFT", "RIGHT"]
+        }
+
+        pre_safe = any(safe_directions_before.values())
+
+        safe_after_drop = _can_escape_active_bombs(
+            new_game_state,
+            new_position,
+        )
+
+        if pre_safe != safe_after_drop:
+            self.logger.warning(
+                "BOMB SAFETY MISMATCH position=%s predicted_crates=%d "
+                "pre_safe=%s safe_dirs_before=%s safe_after_drop=%s "
+                "bombs_before=%s bombs_after=%s",
+                old_position,
+                predicted_crates,
+                pre_safe,
+                safe_directions_before,
+                safe_after_drop,
+                old_game_state.get("bombs", []),
+                new_game_state.get("bombs", []),
+            )
 
     if _killed_self(events):
         reward += PENALTY_KILLED_SELF
@@ -613,10 +631,15 @@ def reward_from_transition(
         elif new_timer <= 1:
             reward += PENALTY_STAYING_IN_BLAST
 
-    reward += _bomb_direction_guidance_reward(old_game_state, old_position, self_action)
-
-    if self_action in MOVE_DELTAS and self_action != "WAIT":
-        reward += _lost_escape_route_penalty(self, old_game_state, old_position)
+    if self_action in MOVE_DELTAS:
+        reward += _active_bomb_escape_reward(
+            self,
+            old_game_state,
+            old_position,
+            new_game_state,
+            new_position,
+            self_action,
+        )
 
     old_is_corner = _is_corner(old_game_state, old_position)
     new_is_corner = _is_corner(new_game_state, new_position)
@@ -762,13 +785,13 @@ def _log_survivability_trail(self, events):
         return
 
     last_steps = trail[-6:]
-    any_penalty_fired = any(penalty != 0.0 for _, _, penalty in trail)
-    ever_flipped_to_unsurvivable = any(not before for _, before, _ in trail)
+    any_penalty_fired = any(reward == PENALTY_LOST_ESCAPE_ROUTE for _, _, _, _, reward in trail)
+    ever_flipped_to_unsurvivable = any(before and not after for _, before, after, _, _ in trail)
 
     self.logger.info(
         "[survivability-debug] death #%d: %d bomb-threat steps, "
         "ever unsurvivable: %s, PENALTY_LOST_ESCAPE_ROUTE fired: %s. "
-        "Last steps (remaining, survivable_before, penalty): %s",
+        "Last steps (deadline, before, after, action, reward): %s",
         self.death_count_for_debug_sampling,
         len(trail),
         ever_flipped_to_unsurvivable,
@@ -779,7 +802,7 @@ def _log_survivability_trail(self, events):
     if not ever_flipped_to_unsurvivable:
         self.logger.info(
             "[survivability-debug] death #%d: SUSPECTED BLIND SPOT -- "
-            "survivable_before was True on every recorded step, yet the agent still died.",
+            "no recorded action changed a survivable state into an unsurvivable one, yet the agent still died.",
             self.death_count_for_debug_sampling,
         )
     elif not any_penalty_fired:
