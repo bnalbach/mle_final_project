@@ -324,9 +324,9 @@ def _direction_has_safe_reachable_after_bomb(game_state, position, direction, ma
     final destination must be outside that blast zone.
     """
     if max_steps is None:
-        # The BOMB action already advances the engine once: the new bomb is
-        # observed with timer BOMB_TIMER - 1. The first escape move is handled
-        # separately below, leaving BOMB_TIMER - 2 additional BFS moves.
+        # Placing the bomb consumes one engine tick. The resulting game state
+        # exposes timer BOMB_TIMER - 1, so after the separately evaluated first
+        # escape move only BOMB_TIMER - 2 additional moves remain.
         max_steps = BOMB_TIMER - 2
 
     field = game_state["field"]
@@ -396,6 +396,38 @@ def _can_escape_active_bombs(game_state, position):
     if deadline == 99:
         return True
     return _position_can_survive(game_state, position, deadline)
+
+
+def _direction_preserves_active_escape(game_state, position, direction):
+    """Whether moving `direction` now preserves a timely route away from an
+    already active bomb threatening `position`.
+    """
+    deadline = _minimum_bomb_timer_at_position(game_state, position)
+    if deadline == 99:
+        return _direction_has_safe_reachable(game_state, position, direction)
+
+    if direction not in MOVE_DELTAS or direction == "WAIT":
+        return False
+
+    field = game_state["field"]
+    dx, dy = MOVE_DELTAS[direction]
+    first_step = (position[0] + dx, position[1] + dy)
+
+    if not _inside(field, first_step) or field[first_step[0], first_step[1]] != 0:
+        return False
+
+    explosion_map = game_state.get("explosion_map")
+    if explosion_map is not None and explosion_map[first_step[0], first_step[1]] > 0:
+        return False
+
+    dangerous = _danger_cells(game_state)
+    others = {item[3] for item in game_state.get("others", [])}
+    reachable = _reachable_distances(field, first_step, others)
+
+    return any(
+        tile not in dangerous and distance <= deadline - 1
+        for tile, distance in reachable.items()
+    )
 
 
 def valid_actions(game_state):
@@ -573,8 +605,20 @@ def state_to_features(game_state, recent_positions=None):
 
     features.extend(_one_hot(int(bool(bombs_left)), 2))
 
+    # Preserve the existing four feature slots. In an active bomb threat,
+    # they directly encode whether each immediate direction preserves a timely
+    # escape route; otherwise they retain the generic movement-safety meaning.
+    active_bomb_threat = _minimum_bomb_timer_at_position(game_state, position) < 99
+
     for direction in ["UP", "DOWN", "LEFT", "RIGHT"]:
-        leads_safe = _direction_has_safe_reachable(game_state, position, direction)
+        if active_bomb_threat:
+            leads_safe = _direction_preserves_active_escape(
+                game_state, position, direction
+            )
+        else:
+            leads_safe = _direction_has_safe_reachable(
+                game_state, position, direction
+            )
         features.append(float(leads_safe))
 
     for direction in ["UP", "DOWN", "LEFT", "RIGHT"]:
