@@ -1,4 +1,11 @@
 """
+Move file on same level as main.py
+Generally good to run like: 
+- python evaluate.py --agent user_agent --rounds 25 --suite combat --timeout 0.5 --out results/eval_1.json OR
+- python evaluate.py --agent agent_v3 --seed 1 --out results/eval_1.json
+
+
+
 Automatic evaluation harness for the Bomberman DQN agent.
 
 Runs the *trained* agent (self.train = False, greedy) inside the ORIGINAL
