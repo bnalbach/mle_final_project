@@ -21,7 +21,7 @@ MODEL_PATH = os.path.join(os.path.dirname(__file__), "dqn_model.pt")
 
 BOMB_RANGE = s.BOMB_POWER
 
-# Number of steps a bomb takes to explode after being placed.
+
 BOMB_TIMER = getattr(s, "BOMB_TIMER", 4)
 
 POSITION_HISTORY_LENGTH = 4
@@ -69,21 +69,8 @@ def _bomb_positions(game_state):
 
 
 def _bomb_blast_cells(field, bomb_position):
-    """Cells reachable by a bomb's blast, matching the OFFICIAL engine
-    (items.py Bomb.get_blast_coords): propagation stops ONLY at a wall
-    (field value == -1), NOT at a crate. A crate in the path is destroyed
-    but does NOT block the blast from continuing further in that
-    direction, up to BOMB_RANGE tiles total.
-
-    FIX: the previous version stopped at ANY non-zero cell (`!= 0`), which
-    incorrectly stopped at crates too -- exactly like a wall. That made
-    every one of this codebase's safety checks (_danger_cells,
-    _minimum_bomb_timer_at_position, _position_can_survive,
-    _direction_has_safe_reachable_after_bomb, ...) UNDERESTIMATE the true
-    blast radius whenever a crate stood between the bomb and a tile
-    further away: that tile was wrongly classified as safe, when the real
-    engine's explosion actually reaches straight through the crate (up to
-    BOMB_RANGE tiles, or until a wall) and would still hit it.
+    """
+    Calculates all Cells effecte dby a bomb on current position, only stopped by walls
     """
     cells = {tuple(bomb_position)}
     x, y = bomb_position
@@ -134,25 +121,11 @@ def _minimum_bomb_timer_at_position(game_state, position):
     return min(timers) if timers else 99
 
 
-def _maximum_bomb_timer_at_position(game_state, position):
-    """Like _minimum_bomb_timer_at_position but returns the LARGEST timer
-    among bombs threatening `position`, i.e. how many steps remain until
-    the LAST bomb that could still hit this tile goes off.
-    """
-    field = game_state["field"]
-    timers = []
-
-    for bomb_position, timer in _bombs_with_timers(game_state):
-        if position in _bomb_blast_cells(field, bomb_position):
-            timers.append(timer)
-
-    return max(timers) if timers else 99
 
 
 def _bomb_would_hit_crate(game_state):
-    """True if a bomb placed at the agent's current position would hit at
-    least one crate anywhere along its (now correctly wall-only-stopped)
-    blast path.
+    """
+    True if placing a bomb on current position would hit a crate
     """
     field = game_state["field"]
     x, y = game_state["self"][3]
@@ -176,17 +149,8 @@ def _bomb_would_hit_crate(game_state):
 
 
 def _count_crates_bomb_would_hit(game_state):
-    """Counts how many crates a bomb placed at the agent's current position
-    would destroy. Matches the official engine's blast propagation: a
-    crate does NOT stop the blast (only a wall does), so multiple crates
-    stacked in the same direction (within BOMB_RANGE) are ALL hit and
-    counted -- not just the first one.
-
-    Used to credit REWARD_SAFE_CRATE_HIT immediately at bomb-placement
-    time (see train.py's _bomb_placement_reward), instead of waiting for
-    the delayed CRATE_DESTROYED event. Since the agent can only ever have
-    one bomb active at a time, this prediction is exact in TRAINING_MODE
-    1/2 (no opponents who could destroy the same crates first).
+    """
+    Counts how many crates will be hit by a bomb on current position
     """
     field = game_state["field"]
     x, y = game_state["self"][3]
@@ -317,16 +281,10 @@ def _direction_has_safe_reachable(game_state, position, direction):
 
 
 def _direction_has_safe_reachable_after_bomb(game_state, position, direction, max_steps=None):
-    """Return whether `direction` starts a route escaping a bomb placed now.
-
-    BFS examines every free tile reachable before detonation. Tiles in the
-    new bomb's future blast zone may be traversed before it explodes, but the
-    final destination must be outside that blast zone.
+    """
+    Returns whether direction can reach a safe field from a bomb.
     """
     if max_steps is None:
-        # Placing the bomb consumes one engine tick. The resulting game state
-        # exposes timer BOMB_TIMER - 1, so after the separately evaluated first
-        # escape move only BOMB_TIMER - 2 additional moves remain.
         max_steps = BOMB_TIMER - 2
 
     field = game_state["field"]
@@ -341,7 +299,7 @@ def _direction_has_safe_reachable_after_bomb(game_state, position, direction, ma
     existing_danger = _danger_cells(game_state)
     own_blast = _bomb_blast_cells(field, position)
 
-    # Existing danger is unsafe now. own_blast is only unsafe at detonation.
+
     if first_step in existing_danger:
         return False
 
@@ -357,8 +315,8 @@ def _direction_has_safe_reachable_after_bomb(game_state, position, direction, ma
 
 
 def _bomb_has_any_safe_direction(game_state, position):
-    """True if at least one of UP/DOWN/LEFT/RIGHT is a safe escape after
-    placing a bomb at `position` right now.
+    """
+    True if one can excape from a bomb at the current position
     """
     return any(
         _direction_has_safe_reachable_after_bomb(game_state, position, direction)
@@ -367,8 +325,8 @@ def _bomb_has_any_safe_direction(game_state, position):
 
 
 def _position_can_survive(game_state, position, max_steps):
-    """True if a tile outside ALL current danger zones is reachable from
-    `position` within `max_steps` moves.
+    """
+
     """
     field = game_state["field"]
 
@@ -389,8 +347,7 @@ def _position_can_survive(game_state, position, max_steps):
 
 
 def _can_escape_active_bombs(game_state, position):
-    """Whether `position` still has a route out before the earliest active
-    bomb threatening it detonates.
+    """
     """
     deadline = _minimum_bomb_timer_at_position(game_state, position)
     if deadline == 99:
@@ -399,8 +356,7 @@ def _can_escape_active_bombs(game_state, position):
 
 
 def _direction_preserves_active_escape(game_state, position, direction):
-    """Whether moving `direction` now preserves a timely route away from an
-    already active bomb threatening `position`.
+    """
     """
     deadline = _minimum_bomb_timer_at_position(game_state, position)
     if deadline == 99:
@@ -553,6 +509,17 @@ def _recently_visited_directions(position, recent_positions):
     return flags
 
 
+def _nearest_opponent(game_state):
+    position = game_state["self"][3]
+    distances = _reachable_distances(game_state["field"], position)
+    candidates = [(distances[other[3]], other[3]) for other in game_state.get("others", []) if other[3] in distances]
+    return min(candidates) if candidates else (99, None)
+
+
+def _bomb_would_hit_position(field, bomb_position, target):
+    return target is not None and target in _bomb_blast_cells(field, bomb_position)
+
+
 def state_to_features(game_state, recent_positions=None):
     field = game_state["field"]
     _, _, bombs_left, position = game_state["self"]
@@ -605,9 +572,7 @@ def state_to_features(game_state, recent_positions=None):
 
     features.extend(_one_hot(int(bool(bombs_left)), 2))
 
-    # Preserve the existing four feature slots. In an active bomb threat,
-    # they directly encode whether each immediate direction preserves a timely
-    # escape route; otherwise they retain the generic movement-safety meaning.
+
     active_bomb_threat = _minimum_bomb_timer_at_position(game_state, position) < 99
 
     for direction in ["UP", "DOWN", "LEFT", "RIGHT"]:
@@ -632,6 +597,14 @@ def state_to_features(game_state, recent_positions=None):
 
     features.extend(_recently_visited_directions(position, recent_positions))
 
+    # needed additions when switching from mode=2 trianing (see train.py)
+    opponent_distance, opponent = _nearest_opponent(game_state)
+    opponent_direction, opponent_distance_level = _path_direction_distance(game_state, position, opponent, opponent_distance)
+    features.extend(_one_hot(opponent_direction, 5))
+    features.extend(_one_hot(opponent_distance_level, 4))
+    features.append(float(_bomb_would_hit_position(field, position, opponent)))
+    features.append(float(opponent in danger if opponent is not None else False))
+
     return np.asarray(features, dtype=np.float32)
 
 
@@ -646,6 +619,26 @@ def _dummy_game_state():
     }
 
 
+def load_compatible_model_state(model, checkpoint, logger=None):
+    """load older checkpoint"""
+    state = checkpoint["model_state_dict"]
+    target = model.state_dict()
+    old_first, new_first = state.get("net.0.weight"), target.get("net.0.weight")
+    if old_first is None or new_first is None or tuple(old_first.shape) == tuple(new_first.shape):
+        model.load_state_dict(state)
+        return False
+    if old_first.ndim != 2 or new_first.ndim != 2 or old_first.shape[0] != new_first.shape[0] or old_first.shape[1] >= new_first.shape[1]:
+        raise RuntimeError(f"Incompatible checkpoint input shape: {tuple(old_first.shape)} -> {tuple(new_first.shape)}")
+    upgraded = {key: value for key, value in state.items() if key in target and tuple(value.shape) == tuple(target[key].shape)}
+    expanded = new_first.clone()
+    expanded[:, :old_first.shape[1]] = old_first
+    upgraded["net.0.weight"] = expanded
+    model.load_state_dict(upgraded, strict=False)
+    if logger is not None:
+        logger.info("Expanded checkpoint input features: %d -> %d; new weights initialized to zero.", old_first.shape[1], new_first.shape[1])
+    return True
+
+
 def setup(self):
     self.epsilon = 0.0
 
@@ -657,7 +650,7 @@ def setup(self):
 
     if os.path.isfile(MODEL_PATH):
         checkpoint = torch.load(MODEL_PATH, map_location=DEVICE)
-        self.policy_net.load_state_dict(checkpoint["model_state_dict"])
+        load_compatible_model_state(self.policy_net, checkpoint, self.logger)
 
     self.policy_net.eval()
 
