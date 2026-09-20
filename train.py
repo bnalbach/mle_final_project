@@ -17,33 +17,32 @@ from .callbacks import (
     MOVE_DELTAS,
     POSITION_HISTORY_LENGTH,
     QNetwork,
-    _bomb_has_any_safe_direction,
-    _bomb_would_hit_crate,
     _can_escape_active_bombs,
     _count_crates_bomb_would_hit,
     _direction_has_safe_reachable_after_bomb,
     _distance_to_nearest_bomb,
     _distance_to_nearest_crate,
-    _maximum_bomb_timer_at_position,
     _minimum_bomb_timer_at_position,
     _nearest_coin,
     _nearest_crate_target,
-    _position_can_survive,
     _reachable_with_first_step,
     state_to_features,
     valid_actions,
 )
 
-# --------------------------------------------------------------------------
-# Curriculum training mode
-# --------------------------------------------------------------------------
-TRAINING_MODE = 2
 
-CURRICULUM_TRANSITION_EPSILON = 0.6
+# training mode
 
-# --------------------------------------------------------------------------
-# DQN hyperparameters (identical across all curriculum modes)
-# --------------------------------------------------------------------------
+TRAINING_MODE = 3
+# mode = 1: coin only
+# mode = 2: coins and crates
+# mode = 3: everything
+
+CURRICULUM_TRANSITION_EPSILON = 0.05
+
+
+# DQN hyperparameters identical for all modes
+
 GAMMA = 0.95
 LEARNING_RATE = 1e-4
 
@@ -55,18 +54,18 @@ GRAD_CLIP_NORM = 10.0
 
 EPSILON_START = 1.0
 EPSILON_MIN = 0.05
-EPSILON_DECAY = 0.9995
+EPSILON_DECAY = 0.995
 
 USE_DOUBLE_DQN = True
 
-# --------------------------------------------------------------------------
-# Debug instrumentation for PENALTY_LOST_ESCAPE_ROUTE / survivability.
-# --------------------------------------------------------------------------
+
+# Debug for checking some code mismatch
+
 DEBUG_LOG_EVERY_N_DEATHS = 10
 
-# --------------------------------------------------------------------------
-# Reward/penalty constants always active (survival, movement, coins)
-# --------------------------------------------------------------------------
+
+# Reward/penalty constants always active 
+
 PENALTY_STEP = -0.001
 
 REWARD_COIN_COLLECTED = 10.0
@@ -99,34 +98,20 @@ DIVERSITY_WINDOW = 4
 MIN_UNIQUE_TILES_FOR_NO_PENALTY = 3
 PENALTY_LOW_MOVEMENT_DIVERSITY = -0.4
 
-# --------------------------------------------------------------------------
-# Reward/penalty constants gated by TRAINING_MODE >= 2 (crates and bombs)
-# --------------------------------------------------------------------------
+
+# Reward/penalty constants for TRAINING MODE >= 2
+
 if TRAINING_MODE >= 2:
     REWARD_MOVED_TOWARD_CRATE = 0.05
     REWARD_CRATE_DIRECTION = 0.01
     PENALTY_MOVED_AWAY_FROM_CRATE = -0.25
     PENALTY_NO_CRATE_PROGRESS = -0.02
 
-    # --------------------------------------------------------------------
-    # Bomb-placement reward.
-    #
-    # The crate reward is predicted and paid IMMEDIATELY at placement time
-    # (via _count_crates_bomb_would_hit, exact under TRAINING_MODE 1/2
-    # since only one bomb can ever be active at once, and now correctly
-    # counting ALL crates the blast would hit -- including multiple crates
-    # stacked in the same direction, matching the official engine's blast
-    # propagation which only stops at walls, not crates). It is GATED on
-    # safety: an unsafe bomb gets only the mild baseline penalty plus a
-    # harsher unsafe-specific penalty and NO crate reward, no matter how
-    # many crates it would hit -- so it can no longer be bailed out by a
-    # high crate count. A safe bomb gets the baseline penalty plus the
-    # full per-crate reward.
-    # --------------------------------------------------------------------
-    PENALTY_BOMB_BASELINE = 0  # mild, applies to every bomb placement
-    REWARD_SAFE_CRATE_HIT = 2.0  # per crate, only paid if the bomb was safe
-    PENALTY_BOMB_NO_SAFE_ESCAPE = -12.0  # additional, on top of baseline,
-    # if no safe escape exists.
+    
+    # Bomb-placement reward, applied when bomb is placed not when it hits
+    PENALTY_BOMB_BASELINE = 0  # older trainings versions
+    REWARD_SAFE_CRATE_HIT = 2.0  
+    PENALTY_BOMB_NO_SAFE_ESCAPE = -12.0  
     PENALTY_BOMB_NEAR_COIN = -5.0
 
     REWARD_MOVED_AWAY_FROM_BOMB = 0.15
@@ -172,13 +157,12 @@ else:
     PENALTY_IGNORED_SAFE_DIRECTION = 0.0
     PENALTY_LOST_ESCAPE_ROUTE = 0.0
 
-# --------------------------------------------------------------------------
-# Reward/penalty constants gated by TRAINING_MODE >= 3 (opponents)
-# --------------------------------------------------------------------------
+# Reward/penalty constants for TRAINING MODE >= 3
+
 if TRAINING_MODE >= 3:
     REWARD_KILLED_OPPONENT = 5.0
     REWARD_OPPONENT_ELIMINATED = 0.5
-    PENALTY_GOT_KILLED = -10.0
+    PENALTY_GOT_KILLED = -60.0
 else:
     REWARD_KILLED_OPPONENT = 0.0
     REWARD_OPPONENT_ELIMINATED = 0.0
@@ -379,20 +363,12 @@ def _has_low_movement_diversity(position_history, new_position):
     return len(set(recent_window)) < MIN_UNIQUE_TILES_FOR_NO_PENALTY
 
 
-def _bomb_placement_reward(game_state, position):
-    """Computes the full bomb-placement reward immediately, combining the
-    predicted crate count (now correctly counting multiple crates per
-    direction -- see _count_crates_bomb_would_hit's docstring for the
-    blast-propagation fix) with a hard safety gate:
-
-      reward = PENALTY_BOMB_BASELINE                      (always, mild)
-             + (REWARD_SAFE_CRATE_HIT * predicted_crates)  (ONLY if safe)
-             + PENALTY_BOMB_NO_SAFE_ESCAPE                 (ONLY if unsafe)
-
-    Returns (reward, predicted_crates, is_safe).
+def _bomb_placement_reward(old_game_state, new_game_state, new_position):
     """
-    predicted_crates = _count_crates_bomb_would_hit(game_state)
-    is_safe = _bomb_has_any_safe_direction(game_state, position)
+    Full bomb reward/penatly is calculated on placement not on explosion
+    """
+    predicted_crates = _count_crates_bomb_would_hit(old_game_state)
+    is_safe = _can_escape_active_bombs(new_game_state, new_position)
 
     reward = PENALTY_BOMB_BASELINE
 
@@ -500,7 +476,9 @@ def reward_from_transition(
         coin_distance_before_bomb = 99
 
     if self_action == "BOMB" and _bomb_actually_dropped(events):
-        bomb_reward, predicted_crates, is_safe = _bomb_placement_reward(old_game_state, old_position)
+        bomb_reward, predicted_crates, is_safe = _bomb_placement_reward(
+            old_game_state, new_game_state, new_position
+        )
         reward += bomb_reward
 
         self.bombs_dropped_this_round += 1
