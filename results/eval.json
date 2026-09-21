@@ -1,0 +1,59 @@
+{
+    "by_agent": {
+        "rule_based_agent_0": {
+            "bombs": 29,
+            "coins": 3,
+            "crates": 42,
+            "invalid": 18,
+            "moves": 273,
+            "rounds": 1,
+            "score": 3,
+            "steps": 320,
+            "suicides": 1,
+            "time": 0.2572333812713623
+        },
+        "rule_based_agent_1": {
+            "bombs": 15,
+            "coins": 2,
+            "crates": 27,
+            "invalid": 3,
+            "moves": 180,
+            "rounds": 1,
+            "score": 2,
+            "steps": 198,
+            "time": 0.10985112190246582
+        },
+        "rule_based_agent_2": {
+            "bombs": 28,
+            "coins": 2,
+            "crates": 25,
+            "invalid": 4,
+            "kills": 1,
+            "moves": 288,
+            "rounds": 1,
+            "score": 7,
+            "steps": 324,
+            "time": 0.20679712295532227
+        },
+        "user_agent": {
+            "bombs": 8,
+            "coins": 2,
+            "crates": 31,
+            "invalid": 1,
+            "moves": 51,
+            "rounds": 1,
+            "score": 2,
+            "steps": 67,
+            "suicides": 1,
+            "time": 0.18360161781311035
+        }
+    },
+    "by_round": {
+        "Round 01 (2026-09-18 19-50-30)": {
+            "coins": 9,
+            "kills": 1,
+            "steps": 324,
+            "suicides": 2
+        }
+    }
+}
