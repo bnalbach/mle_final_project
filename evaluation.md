@@ -1,3 +1,23 @@
+# qtable-mode1
+
+=== coin_solo  [coin-heaven]  vs none  (n=100) ===
+    coins              47.7/50
+    collect_rate       0.95
+    coins/step         0.220
+    steps_alive        217
+    stuck_rate         0.33
+    suicides/round     0.00
+    invalid_rate       0.000
+
+=== coin_vs_collectors  [coin-heaven]  vs coin_collector_agent, coin_collector_agent, coin_collector_agent  (n=100) ===
+    coin_share         0.23
+    coins              11.7
+    win_rate           0.14
+    stuck_rate         1.00
+    survival_rate      1.00
+
+Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_171039.json
+
 # dqn-mode1-initial
 === move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
     survival_rate      1.00
