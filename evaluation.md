@@ -18,6 +18,82 @@
 
 Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_171039.json
 
+# qtable-mode2-initial
+=== move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         1.00
+    action_loop_rate   0.973
+    pos_loop_rate      0.970
+    invalid_rate       0.000
+    wait_rate          0.000
+    tile_diversity     0.02
+    coins              2.5
+
+=== move_vs_peaceful  [classic]  vs peaceful_agent, peaceful_agent  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         1.00
+    action_loop_rate   1.000
+    pos_loop_rate      0.998
+    invalid_rate       0.000
+    wait_rate          1.000
+    tile_diversity     0.00
+    coins              0.0
+
+=== coin_solo  [coin-heaven]  vs none  (n=100) ===
+    coins              2.5/50
+    collect_rate       0.05
+    coins/step         0.006
+    steps_alive        400
+    stuck_rate         1.00
+    suicides/round     0.00
+    invalid_rate       0.000
+
+=== coin_vs_collectors  [coin-heaven]  vs coin_collector_agent, coin_collector_agent, coin_collector_agent  (n=100) ===
+    coin_share         0.03
+    coins              1.6
+    win_rate           0.00
+    stuck_rate         1.00
+    survival_rate      0.99
+
+=== combat_3rule  [classic]  vs rule_based_agent, rule_based_agent, rule_based_agent  (n=100) ===
+    win_rate           0.00
+    mean_rank          3.77
+    score              0.08
+    kills/round        0.00
+    suicides/round     0.01
+    survival_rate      0.02
+    steps_survived     134
+    stuck_rate         1.00
+    coin_share         0.01
+
+=== combat_mixed  [classic]  vs rule_based_agent, coin_collector_agent, random_agent  (n=100) ===
+    win_rate           0.00
+    mean_rank          2.96
+    score              0.04
+    kills/round        0.00
+    suicides/round     0.00
+    survival_rate      0.04
+    steps_survived     156
+    stuck_rate         1.00
+    coin_share         0.00
+
+=== combat_vs_oldmodel  [classic]  vs rule_based_agent, rule_based_agent, user_agent  (n=100) ===
+    win_rate           0.00
+    mean_rank          2.94
+    score              0.04
+    kills/round        0.00
+    suicides/round     0.00
+    survival_rate      0.05
+    steps_survived     167
+    stuck_rate         1.00
+    coin_share         0.00
+
+Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260925_085656.json
+
+
+
 # dqn-mode1-initial
 === move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
     survival_rate      1.00
