@@ -1,6 +1,14 @@
+__pycache__/
+*.pyc
+*.bak
+Code/mle_final_project/agent_code/dqn-mode2-bomb/network_architecture_summary.md
+Code/mle_final_project/agent_code/dqn-mode2-crate_balance/network_architecture_summary.md
+Code/mle_final_project/agent_code/dqn-mode2-initital/network_architecture_summary.md
+Code/mle_final_project/agent_code/dqn-mode2-selfkill/network_architecture_summary.md
 agent_code/coin_collector_agent/logs/
 agent_code/model_b1/training.log
 agent_code/peaceful_agent/logs/peaceful_agent.log
+mode3-model/
 implementation.md
-project_instruction.md
+project_instructions.pdf
 rename.md
