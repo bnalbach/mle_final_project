@@ -1,1 +1,14 @@
-agent_code/user_agent/model_b1/training.log
+__pycache__/
+logs/
+eval/
+*.pyc
+*.bak
+# agent_code/coin_collector_agent/logs/
+# agent_code/model_b1/training.log
+# agent_code/peaceful_agent/logs/peaceful_agent.log
+mode3-model/
+project_instructions.pdf
+
+*.md
+!README.md
+!evaluation.md

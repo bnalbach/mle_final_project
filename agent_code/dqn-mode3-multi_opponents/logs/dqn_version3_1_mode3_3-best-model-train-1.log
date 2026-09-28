@@ -1,0 +1,70 @@
+2026-09-21 12:07:00,986 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Using device: xpu
+2026-09-21 12:07:02,060 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Resumed training state: round=75975, epsilon=0.0500, checkpoint_mode=3
+2026-09-21 12:07:02,060 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Curriculum TRAINING_MODE=3
+2026-09-21 12:07:02,060 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Training on device: xpu
+2026-09-21 12:07:02,064 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Intel XPU device name: Intel(R) Arc(TM) Graphics
+2026-09-21 12:07:03,581 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75976; mode=3; epsilon=0.0500; coins=4; reward=139.13; buffer=129; grad_steps=0; bombs=16; crates=35; useless_bombs=1; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:03,717 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75977; mode=3; epsilon=0.0500; coins=0; reward=-13.95; buffer=163; grad_steps=0; bombs=4; crates=14; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:04,676 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75978; mode=3; epsilon=0.0500; coins=5; reward=98.45; buffer=266; grad_steps=0; bombs=14; crates=32; useless_bombs=2; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:05,078 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75979; mode=3; epsilon=0.0500; coins=1; reward=24.49; buffer=333; grad_steps=0; bombs=8; crates=24; useless_bombs=0; deaths=1; killed_self=0; got_killed=1
+2026-09-21 12:07:08,214 [dqn_version3_1_mode3_3-best-model-train-1_code] WARNING: BOMB SAFETY MISMATCH position=(np.int64(1), np.int64(1)) predicted_crates=0 pre_safe=False safe_dirs_before={'UP': False, 'DOWN': False, 'LEFT': False, 'RIGHT': False} safe_after_drop=True bombs_before=[] bombs_after=[((np.int64(1), np.int64(1)), 3)]
+2026-09-21 12:07:08,805 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75980; mode=3; epsilon=0.0500; coins=1; reward=28.01; buffer=668; grad_steps=0; bombs=43; crates=40; useless_bombs=27; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:14,217 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=0 loss=1.3100
+2026-09-21 12:07:16,793 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75981; mode=3; epsilon=0.0500; coins=1; reward=319.33; buffer=1069; grad_steps=70; bombs=56; crates=48; useless_bombs=39; deaths=0; killed_self=0; got_killed=0
+2026-09-21 12:07:17,037 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=100 loss=0.5815
+2026-09-21 12:07:17,884 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75982; mode=3; epsilon=0.0500; coins=3; reward=69.80; buffer=1158; grad_steps=159; bombs=11; crates=33; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:18,229 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=200 loss=0.8273
+2026-09-21 12:07:19,994 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=300 loss=0.6696
+2026-09-21 12:07:21,896 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=400 loss=1.1956
+2026-09-21 12:07:23,916 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=500 loss=0.8387
+2026-09-21 12:07:25,584 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75983; mode=3; epsilon=0.0500; coins=3; reward=318.52; buffer=1559; grad_steps=560; bombs=55; crates=43; useless_bombs=40; deaths=0; killed_self=0; got_killed=0
+2026-09-21 12:07:26,226 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=600 loss=0.2551
+2026-09-21 12:07:26,802 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75984; mode=3; epsilon=0.0500; coins=2; reward=27.53; buffer=1621; grad_steps=622; bombs=8; crates=19; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:27,141 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75985; mode=3; epsilon=0.0500; coins=1; reward=-9.58; buffer=1647; grad_steps=648; bombs=4; crates=11; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:28,218 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=700 loss=0.9186
+2026-09-21 12:07:31,221 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=800 loss=0.5443
+2026-09-21 12:07:32,218 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75986; mode=3; epsilon=0.0500; coins=2; reward=144.73; buffer=1854; grad_steps=855; bombs=27; crates=41; useless_bombs=12; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:32,677 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=900 loss=0.3813
+2026-09-21 12:07:32,971 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75987; mode=3; epsilon=0.0500; coins=1; reward=-9.81; buffer=1917; grad_steps=918; bombs=8; crates=13; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:33,414 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: [survivability-debug] death #10: 17 bomb-threat steps, ever unsurvivable: True, PENALTY_LOST_ESCAPE_ROUTE fired: True. Last steps (deadline, before, after, action, reward): [(1, True, True, np.str_('UP'), 0.5), (3, True, True, np.str_('DOWN'), 0.5), (2, True, True, np.str_('LEFT'), 0.5), (3, True, True, np.str_('DOWN'), 0.5), (2, True, True, np.str_('DOWN'), 0.5), (1, True, False, np.str_('UP'), -20.0)]
+2026-09-21 12:07:33,414 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75988; mode=3; epsilon=0.0500; coins=2; reward=20.14; buffer=1963; grad_steps=964; bombs=6; crates=21; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:33,698 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=1000 loss=1.6018
+2026-09-21 12:07:34,178 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75989; mode=3; epsilon=0.0500; coins=2; reward=49.01; buffer=2031; grad_steps=1032; bombs=9; crates=22; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:34,345 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75990; mode=3; epsilon=0.0500; coins=0; reward=-61.79; buffer=2053; grad_steps=1054; bombs=3; crates=8; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:34,904 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=1100 loss=0.4062
+2026-09-21 12:07:37,649 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=1200 loss=0.3893
+2026-09-21 12:07:38,645 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75991; mode=3; epsilon=0.0500; coins=2; reward=143.54; buffer=2237; grad_steps=1238; bombs=25; crates=51; useless_bombs=4; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:39,788 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=1300 loss=2.6168
+2026-09-21 12:07:41,095 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75992; mode=3; epsilon=0.0500; coins=1; reward=6.84; buffer=2345; grad_steps=1346; bombs=13; crates=33; useless_bombs=2; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:41,205 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75993; mode=3; epsilon=0.0500; coins=0; reward=-75.55; buffer=2358; grad_steps=1359; bombs=2; crates=4; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:41,545 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=1400 loss=0.2291
+2026-09-21 12:07:41,573 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75994; mode=3; epsilon=0.0500; coins=1; reward=-13.01; buffer=2403; grad_steps=1404; bombs=6; crates=20; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:42,948 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=1500 loss=0.8152
+2026-09-21 12:07:43,061 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75995; mode=3; epsilon=0.0500; coins=4; reward=117.53; buffer=2507; grad_steps=1508; bombs=13; crates=37; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:43,264 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75996; mode=3; epsilon=0.0500; coins=0; reward=-60.16; buffer=2534; grad_steps=1535; bombs=4; crates=10; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:43,470 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75997; mode=3; epsilon=0.0500; coins=1; reward=-45.01; buffer=2561; grad_steps=1562; bombs=4; crates=9; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:43,591 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: [survivability-debug] death #20: 6 bomb-threat steps, ever unsurvivable: False, PENALTY_LOST_ESCAPE_ROUTE fired: False. Last steps (deadline, before, after, action, reward): [(3, True, True, np.str_('RIGHT'), 0.5), (2, True, True, np.str_('WAIT'), 0.0), (1, True, True, np.str_('DOWN'), 0.5), (3, True, True, np.str_('RIGHT'), 0.5), (2, True, True, np.str_('RIGHT'), 0.5), (1, True, True, np.str_('DOWN'), 0.5)]
+2026-09-21 12:07:43,591 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: [survivability-debug] death #20: SUSPECTED BLIND SPOT -- no recorded action changed a survivable state into an unsurvivable one, yet the agent still died.
+2026-09-21 12:07:43,591 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75998; mode=3; epsilon=0.0500; coins=0; reward=-37.22; buffer=2577; grad_steps=1578; bombs=2; crates=7; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:43,781 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=1600 loss=0.5071
+2026-09-21 12:07:45,212 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: Round 75999; mode=3; epsilon=0.0500; coins=3; reward=114.13; buffer=2695; grad_steps=1696; bombs=14; crates=38; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-21 12:07:45,251 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=1700 loss=0.3563
+2026-09-21 12:07:47,531 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=1800 loss=0.4139
+2026-09-21 12:07:50,727 [dqn_version3_1_mode3_3-best-model-train-1_code] INFO: grad_step=1900 loss=2.1582
+2026-09-21 12:07:52,014 [dqn_version3_1_mode3_3-best-model-train-1_wrapper] ERROR: 
+Traceback (most recent call last):
+  File "/home/jonathan/Documents/SS26/mle/final-project/bomberman_rl/agents.py", line 248, in process_event
+    event_result = getattr(module, event_name)(self.fake_self, *event_args)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonathan/Documents/SS26/mle/final-project/bomberman_rl/agent_code/dqn_version3_1_mode3_3-best-model-train-1/train.py", line 722, in game_events_occurred
+    reward = reward_from_transition(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonathan/Documents/SS26/mle/final-project/bomberman_rl/agent_code/dqn_version3_1_mode3_3-best-model-train-1/train.py", line 581, in reward_from_transition
+    new_bomb_distance = _distance_to_nearest_bomb(new_game_state)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonathan/Documents/SS26/mle/final-project/bomberman_rl/agent_code/dqn_version3_1_mode3_3-best-model-train-1/callbacks.py", line 455, in _distance_to_nearest_bomb
+    distances = _reachable_distances(game_state["field"], position)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonathan/Documents/SS26/mle/final-project/bomberman_rl/agent_code/dqn_version3_1_mode3_3-best-model-train-1/callbacks.py", line 197, in _reachable_distances
+    continue
+KeyboardInterrupt

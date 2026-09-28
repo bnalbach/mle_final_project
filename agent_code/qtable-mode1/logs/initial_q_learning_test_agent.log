@@ -1,0 +1,2 @@
+2026-08-08 15:59:25,499 [initial_q_learning_test_agent_code] INFO: Setting up coin-collection Q-learning agent
+2026-08-08 15:59:25,504 [initial_q_learning_test_agent_code] INFO: Loaded trained Q-table with 8340 states

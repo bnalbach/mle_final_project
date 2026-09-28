@@ -1,33 +1,23 @@
 """
-Automatic evaluation harness for the Bomberman DQN agent.
+Automatic evaluation accross different scenarios.
 
-Runs the *trained* agent (self.train = False, greedy) inside the ORIGINAL
-framework across several fixed scenarios / opponent line-ups and reports
-behavioural metrics tuned to what each suite is meant to test:
+main scenarios:
+- move > does it move sensibly, not loop, not kill itself (no/weak opponents)
+- coin > does it collect coins efficiently (solo, and vs coin collectors)
+- combat > does it win, and how, against different opponents
 
-    move    - does it move sensibly, not loop, not kill itself (no/weak opponents)
-    coin    - does it collect coins efficiently (solo, and vs coin collectors)
-    combat  - does it win, and how, against mixed opponents
+Gathers resulting metrics in a table. Metrics include: coins, kills, suicides, crates, bombs, moves and invalid, 
+plus things we measure ourselves (positions, action stream, loop detection).
 
-Nothing here trains. It builds a BombeRLeWorld exactly like main.py does, steps
-it to the end, and reads the per-agent statistics the engine already tracks
-(coins / kills / suicides / crates / bombs / moves / invalid), plus things we
-measure ourselves (positions, action stream, loop detection).
-
-Extras
-------
---gui           watch it live (needs a real pygame install + a display)
+Extras:
+--gui           include gui 
 --save-replay   write replays/<...>.pt per round -> replay with main.py
 --config NAME   run a single named config (handy with --gui)
 Per-config game logs (step-by-step) are written to logs/eval/<config>/game.log.
 
-Usage
------
-    python evaluate.py                          # user_agent vs all suites, 30 rounds
-    python evaluate.py --suite combat --rounds 100
-    python evaluate.py --config coin_solo --gui --rounds 2 --update-interval 0.15
-    python evaluate.py --config combat_3rule --save-replay --rounds 5
-    python evaluate.py --timeout 0.5            # enforce tournament think-time
+Usage:
+e.g.
+    python evaluate.py --agent user_agent --rounds 100 --suite combat --timeout 0.5 --out results/test_user_agent.json
 
 Results print as a table and are written to results/eval_<timestamp>.json.
 """
@@ -41,16 +31,16 @@ import sys
 import time
 from time import sleep, time as now
 
-# --- make the framework importable; go headless unless --gui is requested -----
+### make the framework importable
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PROJECT_ROOT)
 if "--gui" not in sys.argv:
     os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
     os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
 
-import settings as s                                   # noqa: E402
-from environment import BombeRLeWorld, GUI, WorldArgs  # noqa: E402
-from fallbacks import pygame                           # noqa: E402
+import settings as s                                   
+from environment import BombeRLeWorld, GUI, WorldArgs  
+from fallbacks import pygame                           
 
 ESCAPE_KEYS = (pygame.K_q, pygame.K_ESCAPE)
 
@@ -217,7 +207,7 @@ def _round_metrics(world, me, loop_period, loop_repeats):
 
 
 def run_config(cfg, args, log_dir):
-    s.TIMEOUT = args.timeout  # measure decisions, not CPU speed (set 0.5 for realism)
+    s.TIMEOUT = args.timeout  # measure decisions
 
     # Fresh, non-duplicated game log per config.
     logging.getLogger("BombeRLeWorld").handlers.clear()
@@ -273,7 +263,7 @@ def run_config(cfg, args, log_dir):
             if not me.dead:
                 me._positions.append((me.x, me.y))
                 me._steps_alive += 1
-        if world.running:          # loop broke early (quit) - close the round cleanly
+        if world.running:          # if loop broke early (quit), close the round cleanly
             world.end_round()
         per_round.append(_round_metrics(world, me, args.loop_period, args.loop_repeats))
 
@@ -348,7 +338,7 @@ def print_report(results):
             print(f"    {label:<18} {val}")
 
 
-# ------------------------------------------------------------------------------
+
 def main():
     ap = argparse.ArgumentParser(description="Evaluate the trained Bomberman agent.")
     ap.add_argument("--agent", default="user_agent", help="agent_code/<dir> under test")
@@ -378,13 +368,13 @@ def main():
 
     results = {}
     for cfg in suites:
-        log_dir = os.path.join(PROJECT_ROOT, "logs", "eval", cfg["name"])
+        log_dir = os.path.join(PROJECT_ROOT, "logs", args.agent, "eval", cfg["name"])
         t0 = time.time()
         print(f"[running] {cfg['name']} ...", flush=True)
         agg, per_round = run_config(cfg, args, log_dir)
         results[cfg["name"]] = (cfg, agg, per_round)
         print(f"[done]    {cfg['name']} in {time.time() - t0:.1f}s "
-              f"(log: logs/eval/{cfg['name']}/game.log)", flush=True)
+              f"(log: logs/{args.agent}/eval/{cfg['name']}/game.log)", flush=True)
 
     print_report(results)
 
