@@ -15,7 +15,6 @@
     stuck_rate         1.00
     survival_rate      1.00
 
-Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_171039.json
 
 # qtable-mode2-initial
 === move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
@@ -89,7 +88,7 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
     stuck_rate         1.00
     coin_share         0.00
 
-Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260925_085656.json
+
 
 
 
@@ -165,8 +164,6 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
     stuck_rate         0.12
     coin_share         0.08
 
-Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_150519.json
-
 
 # dqn-mode2-initial
 === move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
@@ -239,8 +236,6 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
     steps_survived     69
     stuck_rate         0.03
     coin_share         0.11
-
-Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_150745.json
 
 
 
@@ -318,7 +313,6 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
     stuck_rate         0.56
     coin_share         0.02
 
-Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_160531.json
 
 
 # dqn-mode2-selfkill
@@ -392,7 +386,6 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
     steps_survived     80
     stuck_rate         0.02
     coin_share         0.21
-Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_160800.json
 
 
 # dqn-mode2-crate_balance
@@ -468,7 +461,6 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
     stuck_rate         0.32
     coin_share         0.40
 
-Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_162718.json
 
 
 # dqn-mode2-bomb
@@ -543,7 +535,6 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
     steps_survived     215
     stuck_rate         0.43
     coin_share         0.38
-Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_162824.json
 
 
 # dqn-mode3-initial
@@ -618,7 +609,6 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
     stuck_rate         0.32
     coin_share         0.41
 
-Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_165340.json
 
 
 # dqn-mode3-multi_opponents
@@ -693,7 +683,6 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
     stuck_rate         0.32
     coin_share         0.41
 
-Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_165649.json
 
 
 # dqn-mode3-explore
