@@ -1,1 +1,0 @@
-model_b3 (used as training partner)

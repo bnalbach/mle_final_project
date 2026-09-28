@@ -26,6 +26,12 @@ BOMB_TIMER = getattr(s, "BOMB_TIMER", 4)
 
 POSITION_HISTORY_LENGTH = 4
 
+# Inference-time anti-loop: how many recent tiles to remember when breaking
+# Q-value ties. Longer than POSITION_HISTORY_LENGTH so it catches larger
+# cycles (e.g. circling a wall block). Only used at play time; does NOT change
+# the feature vector, so the trained weights are reused unchanged.
+LOOP_HISTORY_LENGTH = 12
+
 
 def _select_device():
     if torch.cuda.is_available():
@@ -685,10 +691,40 @@ def load_compatible_model_state(model, checkpoint, logger=None):
     return True
 
 
+def _break_tie_anti_loop(self, position, best_actions):
+    """Choose among equally-best actions so we don't get trapped in a cycle.
+
+    The greedy policy is deterministic: on a Q-value tie the original code
+    always took the first action in ACTIONS order, which in symmetric or
+    reward-flat states makes the agent oscillate forever (the ~0.5 stuck_rate).
+    Here we instead prefer a tied action that moves onto a tile we have NOT
+    visited recently, and pick randomly among the remaining candidates. BOMB is
+    never treated as a loop move. Falls back to a random best action if every
+    option revisits.
+    """
+    if len(best_actions) == 1:
+        return best_actions[0]
+
+    history = set(getattr(self, "loop_history", ()))
+
+    def is_loop_move(action):
+        if action == "BOMB":
+            return False
+        if action in MOVE_DELTAS:
+            dx, dy = MOVE_DELTAS[action]
+            return (position[0] + dx, position[1] + dy) in history
+        return position in history  # WAIT stays put
+
+    fresh = [a for a in best_actions if not is_loop_move(a)]
+    pool = fresh if fresh else best_actions
+    return str(np.random.choice(pool))
+
+
 def setup(self):
     self.epsilon = 0.0
 
     self.recent_positions = deque(maxlen=POSITION_HISTORY_LENGTH)
+    self.loop_history = deque(maxlen=LOOP_HISTORY_LENGTH)
 
     input_dim = len(state_to_features(_dummy_game_state()))
 
@@ -714,6 +750,8 @@ def q_values(self, features):
 def act(self, game_state):
     if not hasattr(self, "recent_positions"):
         self.recent_positions = deque(maxlen=POSITION_HISTORY_LENGTH)
+    if not hasattr(self, "loop_history"):
+        self.loop_history = deque(maxlen=LOOP_HISTORY_LENGTH)
 
     position = game_state["self"][3]
 
@@ -745,7 +783,8 @@ def act(self, game_state):
     if self.train:
         chosen_action = np.random.choice(best_actions)
     else:
-        chosen_action = next(action for action in ACTIONS if action in best_actions)
+        chosen_action = _break_tie_anti_loop(self, position, best_actions)
 
     self.recent_positions.append(position)
+    self.loop_history.append(position)
     return chosen_action

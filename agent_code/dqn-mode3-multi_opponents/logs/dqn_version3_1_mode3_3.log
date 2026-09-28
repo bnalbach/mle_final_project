@@ -1,0 +1,418 @@
+2026-09-18 11:06:47,844 [dqn_version3_1_mode3_3_code] INFO: Using device: xpu
+2026-09-18 11:06:48,733 [dqn_version3_1_mode3_3_code] INFO: Resumed training state: round=65875, epsilon=0.0500, checkpoint_mode=3
+2026-09-18 11:06:48,733 [dqn_version3_1_mode3_3_code] INFO: Curriculum TRAINING_MODE=3
+2026-09-18 11:06:48,733 [dqn_version3_1_mode3_3_code] INFO: Training on device: xpu
+2026-09-18 11:06:48,737 [dqn_version3_1_mode3_3_code] INFO: Intel XPU device name: Intel(R) Arc(TM) Graphics
+2026-09-18 11:06:49,607 [dqn_version3_1_mode3_3_code] INFO: Round 65876; mode=3; epsilon=0.0005; coins=2; reward=49.40; buffer=88; grad_steps=0; bombs=12; crates=36; useless_bombs=1; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:06:52,376 [dqn_version3_1_mode3_3_code] INFO: Round 65877; mode=3; epsilon=0.0000; coins=7; reward=268.90; buffer=305; grad_steps=0; bombs=28; crates=74; useless_bombs=3; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:06:57,868 [dqn_version3_1_mode3_3_code] INFO: Round 65878; mode=3; epsilon=0.0000; coins=5; reward=477.19; buffer=706; grad_steps=0; bombs=56; crates=74; useless_bombs=33; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:07:02,249 [dqn_version3_1_mode3_3_code] INFO: grad_step=0 loss=1.0811
+2026-09-18 11:07:05,049 [dqn_version3_1_mode3_3_code] INFO: grad_step=100 loss=0.6802
+2026-09-18 11:07:05,163 [dqn_version3_1_mode3_3_code] INFO: Round 65879; mode=3; epsilon=0.0000; coins=9; reward=613.10; buffer=1107; grad_steps=108; bombs=54; crates=102; useless_bombs=20; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:07:06,100 [dqn_version3_1_mode3_3_code] INFO: grad_step=200 loss=1.7758
+2026-09-18 11:07:07,842 [dqn_version3_1_mode3_3_code] INFO: grad_step=300 loss=0.8959
+2026-09-18 11:07:09,930 [dqn_version3_1_mode3_3_code] INFO: grad_step=400 loss=0.9092
+2026-09-18 11:07:10,695 [dqn_version3_1_mode3_3_code] INFO: Round 65880; mode=3; epsilon=0.0000; coins=4; reward=306.62; buffer=1439; grad_steps=440; bombs=44; crates=66; useless_bombs=18; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:07:11,317 [dqn_version3_1_mode3_3_code] INFO: grad_step=500 loss=1.4216
+2026-09-18 11:07:12,998 [dqn_version3_1_mode3_3_code] INFO: grad_step=600 loss=1.0424
+2026-09-18 11:07:15,041 [dqn_version3_1_mode3_3_code] INFO: grad_step=700 loss=0.6556
+2026-09-18 11:07:17,440 [dqn_version3_1_mode3_3_code] INFO: grad_step=800 loss=0.4098
+2026-09-18 11:07:18,247 [dqn_version3_1_mode3_3_code] INFO: Round 65881; mode=3; epsilon=0.0000; coins=5; reward=457.03; buffer=1840; grad_steps=841; bombs=54; crates=69; useless_bombs=33; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:07:18,897 [dqn_version3_1_mode3_3_code] INFO: grad_step=900 loss=0.9104
+2026-09-18 11:07:20,474 [dqn_version3_1_mode3_3_code] INFO: grad_step=1000 loss=0.6003
+2026-09-18 11:07:22,574 [dqn_version3_1_mode3_3_code] INFO: grad_step=1100 loss=0.3573
+2026-09-18 11:07:24,498 [dqn_version3_1_mode3_3_code] INFO: grad_step=1200 loss=0.7691
+2026-09-18 11:07:25,250 [dqn_version3_1_mode3_3_code] INFO: Round 65882; mode=3; epsilon=0.0000; coins=4; reward=435.55; buffer=2241; grad_steps=1242; bombs=51; crates=63; useless_bombs=26; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:07:25,688 [dqn_version3_1_mode3_3_code] INFO: grad_step=1300 loss=0.4657
+2026-09-18 11:07:27,404 [dqn_version3_1_mode3_3_code] INFO: grad_step=1400 loss=0.7728
+2026-09-18 11:07:29,416 [dqn_version3_1_mode3_3_code] INFO: grad_step=1500 loss=0.4763
+2026-09-18 11:07:31,883 [dqn_version3_1_mode3_3_code] INFO: grad_step=1600 loss=0.6902
+2026-09-18 11:07:33,003 [dqn_version3_1_mode3_3_code] INFO: Round 65883; mode=3; epsilon=0.0000; coins=6; reward=401.10; buffer=2642; grad_steps=1643; bombs=51; crates=63; useless_bombs=28; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:07:33,804 [dqn_version3_1_mode3_3_code] INFO: grad_step=1700 loss=0.7823
+2026-09-18 11:07:36,330 [dqn_version3_1_mode3_3_code] INFO: grad_step=1800 loss=0.9593
+2026-09-18 11:07:38,134 [dqn_version3_1_mode3_3_code] INFO: grad_step=1900 loss=0.7088
+2026-09-18 11:07:39,890 [dqn_version3_1_mode3_3_code] INFO: grad_step=2000 loss=0.5925
+2026-09-18 11:07:40,556 [dqn_version3_1_mode3_3_code] INFO: Round 65884; mode=3; epsilon=0.0000; coins=7; reward=543.87; buffer=3043; grad_steps=2044; bombs=53; crates=73; useless_bombs=25; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:07:41,047 [dqn_version3_1_mode3_3_code] INFO: grad_step=2100 loss=0.6551
+2026-09-18 11:07:42,528 [dqn_version3_1_mode3_3_code] INFO: grad_step=2200 loss=0.6409
+2026-09-18 11:07:44,469 [dqn_version3_1_mode3_3_code] INFO: grad_step=2300 loss=0.5673
+2026-09-18 11:07:46,595 [dqn_version3_1_mode3_3_code] INFO: grad_step=2400 loss=1.8077
+2026-09-18 11:07:47,683 [dqn_version3_1_mode3_3_code] INFO: Round 65885; mode=3; epsilon=0.0000; coins=4; reward=442.33; buffer=3444; grad_steps=2445; bombs=53; crates=58; useless_bombs=29; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:07:48,381 [dqn_version3_1_mode3_3_code] INFO: grad_step=2500 loss=0.7750
+2026-09-18 11:07:50,682 [dqn_version3_1_mode3_3_code] INFO: grad_step=2600 loss=2.0591
+2026-09-18 11:07:52,904 [dqn_version3_1_mode3_3_code] INFO: grad_step=2700 loss=0.6618
+2026-09-18 11:07:54,000 [dqn_version3_1_mode3_3_code] INFO: Round 65886; mode=3; epsilon=0.0000; coins=7; reward=320.56; buffer=3761; grad_steps=2762; bombs=40; crates=62; useless_bombs=15; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:07:54,317 [dqn_version3_1_mode3_3_code] INFO: grad_step=2800 loss=1.0658
+2026-09-18 11:07:55,548 [dqn_version3_1_mode3_3_code] INFO: Round 65887; mode=3; epsilon=0.0000; coins=3; reward=127.96; buffer=3874; grad_steps=2875; bombs=15; crates=51; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:07:55,737 [dqn_version3_1_mode3_3_code] INFO: grad_step=2900 loss=0.4986
+2026-09-18 11:07:56,934 [dqn_version3_1_mode3_3_code] INFO: grad_step=3000 loss=0.6138
+2026-09-18 11:07:58,652 [dqn_version3_1_mode3_3_code] INFO: grad_step=3100 loss=0.4232
+2026-09-18 11:08:00,542 [dqn_version3_1_mode3_3_code] INFO: grad_step=3200 loss=0.6612
+2026-09-18 11:08:02,732 [dqn_version3_1_mode3_3_code] INFO: Round 65888; mode=3; epsilon=0.0000; coins=6; reward=362.37; buffer=4275; grad_steps=3276; bombs=47; crates=65; useless_bombs=17; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:08:03,000 [dqn_version3_1_mode3_3_code] INFO: grad_step=3300 loss=0.5394
+2026-09-18 11:08:04,784 [dqn_version3_1_mode3_3_code] INFO: grad_step=3400 loss=0.6138
+2026-09-18 11:08:05,465 [dqn_version3_1_mode3_3_code] INFO: Round 65889; mode=3; epsilon=0.0000; coins=3; reward=217.21; buffer=4425; grad_steps=3426; bombs=20; crates=65; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:08:06,642 [dqn_version3_1_mode3_3_code] INFO: grad_step=3500 loss=0.6655
+2026-09-18 11:08:08,759 [dqn_version3_1_mode3_3_code] INFO: grad_step=3600 loss=2.9830
+2026-09-18 11:08:11,285 [dqn_version3_1_mode3_3_code] INFO: Round 65890; mode=3; epsilon=0.0000; coins=8; reward=201.20; buffer=4692; grad_steps=3693; bombs=28; crates=56; useless_bombs=5; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:08:11,346 [dqn_version3_1_mode3_3_code] INFO: grad_step=3700 loss=0.9768
+2026-09-18 11:08:12,475 [dqn_version3_1_mode3_3_code] INFO: grad_step=3800 loss=0.6940
+2026-09-18 11:08:14,433 [dqn_version3_1_mode3_3_code] INFO: grad_step=3900 loss=0.4847
+2026-09-18 11:08:14,985 [dqn_version3_1_mode3_3_code] INFO: Round 65891; mode=3; epsilon=0.0000; coins=4; reward=118.32; buffer=4918; grad_steps=3919; bombs=27; crates=57; useless_bombs=5; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:08:16,078 [dqn_version3_1_mode3_3_code] INFO: grad_step=4000 loss=0.4851
+2026-09-18 11:08:17,761 [dqn_version3_1_mode3_3_code] WARNING: BOMB SAFETY MISMATCH position=(np.int64(8), np.int64(13)) predicted_crates=1 pre_safe=True safe_dirs_before={'UP': False, 'DOWN': False, 'LEFT': True, 'RIGHT': False} safe_after_drop=False bombs_before=[((np.int64(9), np.int64(11)), 0)] bombs_after=[((np.int64(8), np.int64(13)), 3)]
+2026-09-18 11:08:18,049 [dqn_version3_1_mode3_3_code] INFO: grad_step=4100 loss=0.5406
+2026-09-18 11:08:19,920 [dqn_version3_1_mode3_3_code] INFO: grad_step=4200 loss=0.8168
+2026-09-18 11:08:21,763 [dqn_version3_1_mode3_3_code] INFO: grad_step=4300 loss=0.8702
+2026-09-18 11:08:22,104 [dqn_version3_1_mode3_3_code] INFO: Round 65892; mode=3; epsilon=0.0000; coins=7; reward=480.67; buffer=5319; grad_steps=4320; bombs=53; crates=74; useless_bombs=28; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:08:23,154 [dqn_version3_1_mode3_3_code] INFO: grad_step=4400 loss=0.8060
+2026-09-18 11:08:25,384 [dqn_version3_1_mode3_3_code] INFO: grad_step=4500 loss=0.4382
+2026-09-18 11:08:26,747 [dqn_version3_1_mode3_3_code] INFO: Round 65893; mode=3; epsilon=0.0000; coins=5; reward=269.24; buffer=5560; grad_steps=4561; bombs=31; crates=74; useless_bombs=8; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:08:27,113 [dqn_version3_1_mode3_3_code] INFO: grad_step=4600 loss=0.7845
+2026-09-18 11:08:29,124 [dqn_version3_1_mode3_3_code] INFO: grad_step=4700 loss=1.9857
+2026-09-18 11:08:31,572 [dqn_version3_1_mode3_3_code] INFO: grad_step=4800 loss=0.5215
+2026-09-18 11:08:31,809 [dqn_version3_1_mode3_3_code] INFO: [survivability-debug] death #10: 101 bomb-threat steps, ever unsurvivable: True, PENALTY_LOST_ESCAPE_ROUTE fired: True. Last steps (deadline, before, after, action, reward): [(3, True, True, np.str_('DOWN'), 0.5), (2, True, True, np.str_('DOWN'), 0.5), (1, True, True, np.str_('LEFT'), 0.5), (3, True, False, np.str_('LEFT'), -20.0), (2, False, False, np.str_('WAIT'), 0.0), (1, False, False, np.str_('LEFT'), 0.0)]
+2026-09-18 11:08:31,809 [dqn_version3_1_mode3_3_code] INFO: Round 65894; mode=3; epsilon=0.0000; coins=6; reward=285.38; buffer=5808; grad_steps=4809; bombs=33; crates=69; useless_bombs=8; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:08:33,116 [dqn_version3_1_mode3_3_code] INFO: grad_step=4900 loss=0.6804
+2026-09-18 11:08:35,686 [dqn_version3_1_mode3_3_code] INFO: grad_step=5000 loss=0.6610
+2026-09-18 11:08:37,477 [dqn_version3_1_mode3_3_code] INFO: grad_step=5100 loss=0.4387
+2026-09-18 11:08:39,237 [dqn_version3_1_mode3_3_code] INFO: grad_step=5200 loss=1.1523
+2026-09-18 11:08:39,384 [dqn_version3_1_mode3_3_code] INFO: Round 65895; mode=3; epsilon=0.0000; coins=8; reward=530.36; buffer=6209; grad_steps=5210; bombs=52; crates=73; useless_bombs=24; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:08:40,290 [dqn_version3_1_mode3_3_code] INFO: grad_step=5300 loss=0.8556
+2026-09-18 11:08:42,656 [dqn_version3_1_mode3_3_code] INFO: grad_step=5400 loss=0.5837
+2026-09-18 11:08:44,898 [dqn_version3_1_mode3_3_code] INFO: grad_step=5500 loss=0.5761
+2026-09-18 11:08:46,153 [dqn_version3_1_mode3_3_code] INFO: Round 65896; mode=3; epsilon=0.0000; coins=6; reward=405.43; buffer=6566; grad_steps=5567; bombs=48; crates=80; useless_bombs=20; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:08:46,406 [dqn_version3_1_mode3_3_code] INFO: grad_step=5600 loss=2.1022
+2026-09-18 11:08:47,966 [dqn_version3_1_mode3_3_code] INFO: grad_step=5700 loss=0.8176
+2026-09-18 11:08:50,731 [dqn_version3_1_mode3_3_code] INFO: grad_step=5800 loss=0.7497
+2026-09-18 11:08:53,323 [dqn_version3_1_mode3_3_code] INFO: grad_step=5900 loss=0.2756
+2026-09-18 11:08:53,632 [dqn_version3_1_mode3_3_code] INFO: Round 65897; mode=3; epsilon=0.0000; coins=5; reward=330.07; buffer=6917; grad_steps=5918; bombs=47; crates=61; useless_bombs=24; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:08:54,518 [dqn_version3_1_mode3_3_code] INFO: grad_step=6000 loss=0.8938
+2026-09-18 11:08:56,343 [dqn_version3_1_mode3_3_code] INFO: Round 65898; mode=3; epsilon=0.0000; coins=5; reward=239.62; buffer=7092; grad_steps=6093; bombs=22; crates=65; useless_bombs=1; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:08:56,430 [dqn_version3_1_mode3_3_code] INFO: grad_step=6100 loss=1.0387
+2026-09-18 11:08:57,904 [dqn_version3_1_mode3_3_code] INFO: grad_step=6200 loss=0.4699
+2026-09-18 11:08:59,655 [dqn_version3_1_mode3_3_code] INFO: grad_step=6300 loss=1.5823
+2026-09-18 11:09:00,002 [dqn_version3_1_mode3_3_code] INFO: Round 65899; mode=3; epsilon=0.0000; coins=4; reward=261.02; buffer=7319; grad_steps=6320; bombs=30; crates=71; useless_bombs=6; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:09:00,921 [dqn_version3_1_mode3_3_code] INFO: grad_step=6400 loss=1.9574
+2026-09-18 11:09:03,043 [dqn_version3_1_mode3_3_code] INFO: grad_step=6500 loss=0.7499
+2026-09-18 11:09:05,308 [dqn_version3_1_mode3_3_code] INFO: grad_step=6600 loss=0.5828
+2026-09-18 11:09:07,010 [dqn_version3_1_mode3_3_code] INFO: grad_step=6700 loss=0.6671
+2026-09-18 11:09:07,416 [dqn_version3_1_mode3_3_code] INFO: Round 65900; mode=3; epsilon=0.0000; coins=7; reward=511.79; buffer=7720; grad_steps=6721; bombs=53; crates=72; useless_bombs=26; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:09:08,430 [dqn_version3_1_mode3_3_code] INFO: grad_step=6800 loss=0.5443
+2026-09-18 11:09:10,514 [dqn_version3_1_mode3_3_code] INFO: grad_step=6900 loss=0.4705
+2026-09-18 11:09:13,761 [dqn_version3_1_mode3_3_code] INFO: grad_step=7000 loss=0.7111
+2026-09-18 11:09:16,522 [dqn_version3_1_mode3_3_code] INFO: grad_step=7100 loss=0.7726
+2026-09-18 11:09:16,885 [dqn_version3_1_mode3_3_code] INFO: Round 65901; mode=3; epsilon=0.0000; coins=4; reward=452.98; buffer=8121; grad_steps=7122; bombs=54; crates=71; useless_bombs=31; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:09:17,850 [dqn_version3_1_mode3_3_code] INFO: grad_step=7200 loss=0.9579
+2026-09-18 11:09:18,143 [dqn_version3_1_mode3_3_code] INFO: Round 65902; mode=3; epsilon=0.0000; coins=2; reward=97.98; buffer=8223; grad_steps=7224; bombs=12; crates=39; useless_bombs=0; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:09:18,868 [dqn_version3_1_mode3_3_code] INFO: grad_step=7300 loss=0.6156
+2026-09-18 11:09:20,157 [dqn_version3_1_mode3_3_code] INFO: grad_step=7400 loss=0.6335
+2026-09-18 11:09:21,830 [dqn_version3_1_mode3_3_code] INFO: grad_step=7500 loss=0.7243
+2026-09-18 11:09:23,646 [dqn_version3_1_mode3_3_code] INFO: grad_step=7600 loss=0.9139
+2026-09-18 11:09:24,054 [dqn_version3_1_mode3_3_code] INFO: Round 65903; mode=3; epsilon=0.0000; coins=7; reward=571.43; buffer=8624; grad_steps=7625; bombs=54; crates=95; useless_bombs=18; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:09:24,948 [dqn_version3_1_mode3_3_code] INFO: grad_step=7700 loss=0.8491
+2026-09-18 11:09:27,106 [dqn_version3_1_mode3_3_code] INFO: grad_step=7800 loss=0.7283
+2026-09-18 11:09:29,367 [dqn_version3_1_mode3_3_code] INFO: grad_step=7900 loss=0.4157
+2026-09-18 11:09:31,497 [dqn_version3_1_mode3_3_code] INFO: grad_step=8000 loss=0.8595
+2026-09-18 11:09:32,030 [dqn_version3_1_mode3_3_code] INFO: Round 65904; mode=3; epsilon=0.0000; coins=5; reward=455.09; buffer=9025; grad_steps=8026; bombs=54; crates=89; useless_bombs=26; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:09:32,912 [dqn_version3_1_mode3_3_code] INFO: grad_step=8100 loss=0.9881
+2026-09-18 11:09:33,530 [dqn_version3_1_mode3_3_code] INFO: Round 65905; mode=3; epsilon=0.0000; coins=5; reward=150.61; buffer=9136; grad_steps=8137; bombs=12; crates=47; useless_bombs=1; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:09:34,251 [dqn_version3_1_mode3_3_code] INFO: Round 65906; mode=3; epsilon=0.0000; coins=2; reward=46.77; buffer=9197; grad_steps=8198; bombs=8; crates=24; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:09:34,279 [dqn_version3_1_mode3_3_code] INFO: grad_step=8200 loss=0.3282
+2026-09-18 11:09:35,574 [dqn_version3_1_mode3_3_code] INFO: grad_step=8300 loss=1.1651
+2026-09-18 11:09:37,835 [dqn_version3_1_mode3_3_code] INFO: grad_step=8400 loss=0.6669
+2026-09-18 11:09:40,057 [dqn_version3_1_mode3_3_code] INFO: grad_step=8500 loss=0.5152
+2026-09-18 11:09:42,151 [dqn_version3_1_mode3_3_code] INFO: Round 65907; mode=3; epsilon=0.0000; coins=5; reward=475.87; buffer=9598; grad_steps=8599; bombs=53; crates=74; useless_bombs=28; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:09:42,170 [dqn_version3_1_mode3_3_code] INFO: grad_step=8600 loss=0.5269
+2026-09-18 11:09:43,495 [dqn_version3_1_mode3_3_code] INFO: grad_step=8700 loss=0.5639
+2026-09-18 11:09:45,337 [dqn_version3_1_mode3_3_code] INFO: grad_step=8800 loss=1.0270
+2026-09-18 11:09:47,416 [dqn_version3_1_mode3_3_code] INFO: grad_step=8900 loss=1.0833
+2026-09-18 11:09:49,413 [dqn_version3_1_mode3_3_code] INFO: Round 65908; mode=3; epsilon=0.0000; coins=7; reward=517.59; buffer=9999; grad_steps=9000; bombs=51; crates=86; useless_bombs=19; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:09:49,424 [dqn_version3_1_mode3_3_code] INFO: grad_step=9000 loss=0.6635
+2026-09-18 11:09:50,761 [dqn_version3_1_mode3_3_code] INFO: grad_step=9100 loss=0.4149
+2026-09-18 11:09:53,145 [dqn_version3_1_mode3_3_code] INFO: grad_step=9200 loss=0.6268
+2026-09-18 11:09:55,311 [dqn_version3_1_mode3_3_code] INFO: grad_step=9300 loss=1.0452
+2026-09-18 11:09:57,742 [dqn_version3_1_mode3_3_code] INFO: grad_step=9400 loss=2.1573
+2026-09-18 11:09:57,743 [dqn_version3_1_mode3_3_code] INFO: Round 65909; mode=3; epsilon=0.0000; coins=7; reward=512.10; buffer=10400; grad_steps=9401; bombs=54; crates=67; useless_bombs=32; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:09:59,444 [dqn_version3_1_mode3_3_code] INFO: grad_step=9500 loss=0.6176
+2026-09-18 11:10:01,553 [dqn_version3_1_mode3_3_code] INFO: grad_step=9600 loss=0.6377
+2026-09-18 11:10:03,834 [dqn_version3_1_mode3_3_code] INFO: grad_step=9700 loss=0.5335
+2026-09-18 11:10:05,782 [dqn_version3_1_mode3_3_code] INFO: grad_step=9800 loss=0.7514
+2026-09-18 11:10:05,793 [dqn_version3_1_mode3_3_code] INFO: Round 65910; mode=3; epsilon=0.0000; coins=4; reward=465.81; buffer=10801; grad_steps=9802; bombs=54; crates=68; useless_bombs=26; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:10:06,898 [dqn_version3_1_mode3_3_code] INFO: grad_step=9900 loss=0.8164
+2026-09-18 11:10:09,480 [dqn_version3_1_mode3_3_code] INFO: grad_step=10000 loss=2.0182
+2026-09-18 11:10:12,023 [dqn_version3_1_mode3_3_code] INFO: grad_step=10100 loss=1.1970
+2026-09-18 11:10:14,737 [dqn_version3_1_mode3_3_code] INFO: grad_step=10200 loss=0.6663
+2026-09-18 11:10:14,764 [dqn_version3_1_mode3_3_code] INFO: Round 65911; mode=3; epsilon=0.0000; coins=4; reward=427.57; buffer=11202; grad_steps=10203; bombs=53; crates=67; useless_bombs=26; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:10:16,388 [dqn_version3_1_mode3_3_code] INFO: grad_step=10300 loss=1.2616
+2026-09-18 11:10:19,120 [dqn_version3_1_mode3_3_code] INFO: grad_step=10400 loss=0.8051
+2026-09-18 11:10:21,684 [dqn_version3_1_mode3_3_code] INFO: grad_step=10500 loss=0.5934
+2026-09-18 11:10:24,016 [dqn_version3_1_mode3_3_code] INFO: grad_step=10600 loss=0.7260
+2026-09-18 11:10:24,070 [dqn_version3_1_mode3_3_code] INFO: Round 65912; mode=3; epsilon=0.0000; coins=7; reward=460.59; buffer=11603; grad_steps=10604; bombs=53; crates=72; useless_bombs=29; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:10:25,404 [dqn_version3_1_mode3_3_code] INFO: grad_step=10700 loss=0.5501
+2026-09-18 11:10:27,632 [dqn_version3_1_mode3_3_code] INFO: grad_step=10800 loss=0.3413
+2026-09-18 11:10:27,731 [dqn_version3_1_mode3_3_code] WARNING: BOMB SAFETY MISMATCH position=(np.int64(5), np.int64(1)) predicted_crates=4 pre_safe=True safe_dirs_before={'UP': False, 'DOWN': True, 'LEFT': False, 'RIGHT': False} safe_after_drop=False bombs_before=[] bombs_after=[((np.int64(5), np.int64(1)), 3)]
+2026-09-18 11:10:28,445 [dqn_version3_1_mode3_3_code] INFO: Round 65913; mode=3; epsilon=0.0000; coins=8; reward=287.19; buffer=11845; grad_steps=10846; bombs=31; crates=70; useless_bombs=5; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:10:28,951 [dqn_version3_1_mode3_3_code] INFO: grad_step=10900 loss=0.7892
+2026-09-18 11:10:31,228 [dqn_version3_1_mode3_3_code] INFO: grad_step=11000 loss=0.7978
+2026-09-18 11:10:33,123 [dqn_version3_1_mode3_3_code] INFO: grad_step=11100 loss=0.9430
+2026-09-18 11:10:35,100 [dqn_version3_1_mode3_3_code] INFO: grad_step=11200 loss=1.1977
+2026-09-18 11:10:35,211 [dqn_version3_1_mode3_3_code] INFO: Round 65914; mode=3; epsilon=0.0000; coins=5; reward=298.79; buffer=12207; grad_steps=11208; bombs=46; crates=67; useless_bombs=20; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:10:36,118 [dqn_version3_1_mode3_3_code] INFO: grad_step=11300 loss=1.3689
+2026-09-18 11:10:37,879 [dqn_version3_1_mode3_3_code] INFO: grad_step=11400 loss=0.6354
+2026-09-18 11:10:39,770 [dqn_version3_1_mode3_3_code] INFO: grad_step=11500 loss=0.3705
+2026-09-18 11:10:41,532 [dqn_version3_1_mode3_3_code] INFO: grad_step=11600 loss=2.7804
+2026-09-18 11:10:41,659 [dqn_version3_1_mode3_3_code] INFO: Round 65915; mode=3; epsilon=0.0000; coins=4; reward=442.46; buffer=12608; grad_steps=11609; bombs=53; crates=65; useless_bombs=29; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:10:42,778 [dqn_version3_1_mode3_3_code] INFO: grad_step=11700 loss=2.9885
+2026-09-18 11:10:43,132 [dqn_version3_1_mode3_3_code] INFO: Round 65916; mode=3; epsilon=0.0000; coins=2; reward=66.71; buffer=12721; grad_steps=11722; bombs=12; crates=32; useless_bombs=2; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:10:43,877 [dqn_version3_1_mode3_3_code] INFO: Round 65917; mode=3; epsilon=0.0000; coins=1; reward=18.61; buffer=12785; grad_steps=11786; bombs=9; crates=27; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:10:43,996 [dqn_version3_1_mode3_3_code] INFO: grad_step=11800 loss=0.6212
+2026-09-18 11:10:45,326 [dqn_version3_1_mode3_3_code] INFO: grad_step=11900 loss=0.9827
+2026-09-18 11:10:47,315 [dqn_version3_1_mode3_3_code] INFO: grad_step=12000 loss=2.7694
+2026-09-18 11:10:49,836 [dqn_version3_1_mode3_3_code] INFO: grad_step=12100 loss=0.8140
+2026-09-18 11:10:51,973 [dqn_version3_1_mode3_3_code] INFO: Round 65918; mode=3; epsilon=0.0000; coins=5; reward=-159.07; buffer=13186; grad_steps=12187; bombs=28; crates=73; useless_bombs=2; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:10:52,090 [dqn_version3_1_mode3_3_code] INFO: grad_step=12200 loss=0.6965
+2026-09-18 11:10:53,872 [dqn_version3_1_mode3_3_code] INFO: grad_step=12300 loss=0.6510
+2026-09-18 11:10:55,515 [dqn_version3_1_mode3_3_code] INFO: Round 65919; mode=3; epsilon=0.0000; coins=5; reward=246.46; buffer=13375; grad_steps=12376; bombs=25; crates=58; useless_bombs=6; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:10:55,709 [dqn_version3_1_mode3_3_code] INFO: grad_step=12400 loss=0.9013
+2026-09-18 11:10:57,139 [dqn_version3_1_mode3_3_code] INFO: grad_step=12500 loss=0.6167
+2026-09-18 11:10:59,060 [dqn_version3_1_mode3_3_code] INFO: grad_step=12600 loss=0.5677
+2026-09-18 11:11:01,270 [dqn_version3_1_mode3_3_code] INFO: grad_step=12700 loss=0.9447
+2026-09-18 11:11:02,706 [dqn_version3_1_mode3_3_code] INFO: Round 65920; mode=3; epsilon=0.0000; coins=7; reward=502.80; buffer=13776; grad_steps=12777; bombs=49; crates=69; useless_bombs=16; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:11:02,894 [dqn_version3_1_mode3_3_code] INFO: grad_step=12800 loss=0.7976
+2026-09-18 11:11:04,420 [dqn_version3_1_mode3_3_code] INFO: grad_step=12900 loss=1.7615
+2026-09-18 11:11:06,923 [dqn_version3_1_mode3_3_code] INFO: grad_step=13000 loss=1.4272
+2026-09-18 11:11:09,291 [dqn_version3_1_mode3_3_code] INFO: grad_step=13100 loss=1.1115
+2026-09-18 11:11:11,289 [dqn_version3_1_mode3_3_code] INFO: Round 65921; mode=3; epsilon=0.0000; coins=7; reward=480.71; buffer=14177; grad_steps=13178; bombs=54; crates=68; useless_bombs=28; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:11:11,579 [dqn_version3_1_mode3_3_code] INFO: grad_step=13200 loss=0.4769
+2026-09-18 11:11:13,640 [dqn_version3_1_mode3_3_code] INFO: grad_step=13300 loss=0.9076
+2026-09-18 11:11:15,536 [dqn_version3_1_mode3_3_code] INFO: grad_step=13400 loss=0.8199
+2026-09-18 11:11:17,241 [dqn_version3_1_mode3_3_code] INFO: grad_step=13500 loss=0.8521
+2026-09-18 11:11:18,721 [dqn_version3_1_mode3_3_code] INFO: Round 65922; mode=3; epsilon=0.0000; coins=6; reward=499.59; buffer=14578; grad_steps=13579; bombs=54; crates=74; useless_bombs=27; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:11:18,903 [dqn_version3_1_mode3_3_code] INFO: grad_step=13600 loss=0.9995
+2026-09-18 11:11:20,336 [dqn_version3_1_mode3_3_code] INFO: grad_step=13700 loss=1.4019
+2026-09-18 11:11:22,049 [dqn_version3_1_mode3_3_code] INFO: Round 65923; mode=3; epsilon=0.0000; coins=4; reward=261.56; buffer=14778; grad_steps=13779; bombs=26; crates=71; useless_bombs=2; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:11:22,252 [dqn_version3_1_mode3_3_code] INFO: grad_step=13800 loss=0.8799
+2026-09-18 11:11:23,852 [dqn_version3_1_mode3_3_code] INFO: grad_step=13900 loss=1.0062
+2026-09-18 11:11:26,103 [dqn_version3_1_mode3_3_code] INFO: grad_step=14000 loss=0.6319
+2026-09-18 11:11:28,407 [dqn_version3_1_mode3_3_code] INFO: grad_step=14100 loss=0.9761
+2026-09-18 11:11:29,003 [dqn_version3_1_mode3_3_code] INFO: Round 65924; mode=3; epsilon=0.0000; coins=8; reward=390.50; buffer=15126; grad_steps=14127; bombs=46; crates=71; useless_bombs=22; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:11:29,783 [dqn_version3_1_mode3_3_code] INFO: grad_step=14200 loss=0.7220
+2026-09-18 11:11:31,852 [dqn_version3_1_mode3_3_code] INFO: grad_step=14300 loss=0.5417
+2026-09-18 11:11:34,012 [dqn_version3_1_mode3_3_code] INFO: grad_step=14400 loss=0.8175
+2026-09-18 11:11:36,251 [dqn_version3_1_mode3_3_code] INFO: grad_step=14500 loss=0.9452
+2026-09-18 11:11:36,607 [dqn_version3_1_mode3_3_code] INFO: [survivability-debug] death #20: 145 bomb-threat steps, ever unsurvivable: True, PENALTY_LOST_ESCAPE_ROUTE fired: True. Last steps (deadline, before, after, action, reward): [(3, True, True, np.str_('UP'), 0.5), (2, True, True, np.str_('UP'), 0.5), (1, True, True, np.str_('LEFT'), 0.5), (3, True, True, np.str_('LEFT'), 0.5), (2, True, False, np.str_('LEFT'), -20.0), (1, False, False, np.str_('WAIT'), 0.0)]
+2026-09-18 11:11:36,608 [dqn_version3_1_mode3_3_code] INFO: Round 65925; mode=3; epsilon=0.0000; coins=7; reward=340.06; buffer=15517; grad_steps=14518; bombs=46; crates=61; useless_bombs=23; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:11:37,724 [dqn_version3_1_mode3_3_code] INFO: grad_step=14600 loss=1.2140
+2026-09-18 11:11:39,809 [dqn_version3_1_mode3_3_code] INFO: grad_step=14700 loss=0.9474
+2026-09-18 11:11:42,063 [dqn_version3_1_mode3_3_code] INFO: grad_step=14800 loss=0.9508
+2026-09-18 11:11:42,712 [dqn_version3_1_mode3_3_code] INFO: Round 65926; mode=3; epsilon=0.0000; coins=5; reward=295.73; buffer=15825; grad_steps=14826; bombs=41; crates=60; useless_bombs=18; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:11:43,828 [dqn_version3_1_mode3_3_code] INFO: grad_step=14900 loss=0.7335
+2026-09-18 11:11:46,175 [dqn_version3_1_mode3_3_code] INFO: grad_step=15000 loss=0.4908
+2026-09-18 11:11:48,753 [dqn_version3_1_mode3_3_code] INFO: grad_step=15100 loss=0.5192
+2026-09-18 11:11:50,804 [dqn_version3_1_mode3_3_code] INFO: grad_step=15200 loss=0.6038
+2026-09-18 11:11:51,256 [dqn_version3_1_mode3_3_code] INFO: Round 65927; mode=3; epsilon=0.0000; coins=5; reward=449.97; buffer=16226; grad_steps=15227; bombs=52; crates=67; useless_bombs=28; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:11:51,908 [dqn_version3_1_mode3_3_code] INFO: grad_step=15300 loss=0.5513
+2026-09-18 11:11:53,945 [dqn_version3_1_mode3_3_code] INFO: grad_step=15400 loss=0.9308
+2026-09-18 11:11:55,992 [dqn_version3_1_mode3_3_code] INFO: grad_step=15500 loss=2.0035
+2026-09-18 11:11:58,016 [dqn_version3_1_mode3_3_code] INFO: grad_step=15600 loss=0.9421
+2026-09-18 11:11:58,584 [dqn_version3_1_mode3_3_code] INFO: Round 65928; mode=3; epsilon=0.0000; coins=6; reward=472.12; buffer=16627; grad_steps=15628; bombs=54; crates=55; useless_bombs=32; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:11:59,413 [dqn_version3_1_mode3_3_code] INFO: grad_step=15700 loss=0.6800
+2026-09-18 11:12:00,976 [dqn_version3_1_mode3_3_code] INFO: grad_step=15800 loss=0.3172
+2026-09-18 11:12:02,992 [dqn_version3_1_mode3_3_code] INFO: grad_step=15900 loss=0.4603
+2026-09-18 11:12:05,428 [dqn_version3_1_mode3_3_code] INFO: grad_step=16000 loss=2.4542
+2026-09-18 11:12:05,918 [dqn_version3_1_mode3_3_code] INFO: Round 65929; mode=3; epsilon=0.0000; coins=8; reward=567.87; buffer=17028; grad_steps=16029; bombs=52; crates=100; useless_bombs=16; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:12:06,775 [dqn_version3_1_mode3_3_code] INFO: grad_step=16100 loss=0.8436
+2026-09-18 11:12:08,940 [dqn_version3_1_mode3_3_code] INFO: grad_step=16200 loss=0.4356
+2026-09-18 11:12:09,617 [dqn_version3_1_mode3_3_code] WARNING: BOMB SAFETY MISMATCH position=(np.int64(3), np.int64(13)) predicted_crates=3 pre_safe=True safe_dirs_before={'UP': False, 'DOWN': False, 'LEFT': False, 'RIGHT': True} safe_after_drop=False bombs_before=[] bombs_after=[((np.int64(3), np.int64(13)), 3)]
+2026-09-18 11:12:09,729 [dqn_version3_1_mode3_3_code] INFO: Round 65930; mode=3; epsilon=0.0000; coins=6; reward=151.65; buffer=17226; grad_steps=16227; bombs=20; crates=55; useless_bombs=1; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:12:10,734 [dqn_version3_1_mode3_3_code] INFO: grad_step=16300 loss=1.1847
+2026-09-18 11:12:12,480 [dqn_version3_1_mode3_3_code] INFO: grad_step=16400 loss=0.7584
+2026-09-18 11:12:14,258 [dqn_version3_1_mode3_3_code] INFO: grad_step=16500 loss=0.4843
+2026-09-18 11:12:16,036 [dqn_version3_1_mode3_3_code] INFO: grad_step=16600 loss=0.7836
+2026-09-18 11:12:16,563 [dqn_version3_1_mode3_3_code] INFO: Round 65931; mode=3; epsilon=0.0000; coins=6; reward=532.65; buffer=17627; grad_steps=16628; bombs=54; crates=80; useless_bombs=27; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:12:17,429 [dqn_version3_1_mode3_3_code] INFO: grad_step=16700 loss=2.4835
+2026-09-18 11:12:19,484 [dqn_version3_1_mode3_3_code] INFO: grad_step=16800 loss=1.2916
+2026-09-18 11:12:21,800 [dqn_version3_1_mode3_3_code] INFO: grad_step=16900 loss=0.6523
+2026-09-18 11:12:23,752 [dqn_version3_1_mode3_3_code] INFO: Round 65932; mode=3; epsilon=0.0000; coins=7; reward=406.68; buffer=17982; grad_steps=16983; bombs=49; crates=63; useless_bombs=26; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:12:23,971 [dqn_version3_1_mode3_3_code] INFO: grad_step=17000 loss=1.0020
+2026-09-18 11:12:25,922 [dqn_version3_1_mode3_3_code] INFO: grad_step=17100 loss=0.7082
+2026-09-18 11:12:28,609 [dqn_version3_1_mode3_3_code] INFO: grad_step=17200 loss=0.6058
+2026-09-18 11:12:30,016 [dqn_version3_1_mode3_3_code] INFO: Round 65933; mode=3; epsilon=0.0000; coins=4; reward=250.83; buffer=18254; grad_steps=17255; bombs=36; crates=51; useless_bombs=16; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:12:30,442 [dqn_version3_1_mode3_3_code] INFO: grad_step=17300 loss=0.7657
+2026-09-18 11:12:31,810 [dqn_version3_1_mode3_3_code] INFO: grad_step=17400 loss=0.8425
+2026-09-18 11:12:33,563 [dqn_version3_1_mode3_3_code] INFO: grad_step=17500 loss=0.8398
+2026-09-18 11:12:35,560 [dqn_version3_1_mode3_3_code] INFO: grad_step=17600 loss=1.1200
+2026-09-18 11:12:36,820 [dqn_version3_1_mode3_3_code] INFO: Round 65934; mode=3; epsilon=0.0000; coins=4; reward=452.70; buffer=18655; grad_steps=17656; bombs=56; crates=79; useless_bombs=27; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:12:37,244 [dqn_version3_1_mode3_3_code] INFO: grad_step=17700 loss=1.4937
+2026-09-18 11:12:39,030 [dqn_version3_1_mode3_3_code] INFO: grad_step=17800 loss=1.0098
+2026-09-18 11:12:39,572 [dqn_version3_1_mode3_3_code] INFO: Round 65935; mode=3; epsilon=0.0000; coins=7; reward=244.04; buffer=18825; grad_steps=17826; bombs=22; crates=72; useless_bombs=1; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:12:40,502 [dqn_version3_1_mode3_3_code] INFO: grad_step=17900 loss=0.7766
+2026-09-18 11:12:41,186 [dqn_version3_1_mode3_3_code] INFO: Round 65936; mode=3; epsilon=0.0000; coins=4; reward=140.89; buffer=18927; grad_steps=17928; bombs=13; crates=40; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:12:42,140 [dqn_version3_1_mode3_3_code] INFO: grad_step=18000 loss=0.8311
+2026-09-18 11:12:44,259 [dqn_version3_1_mode3_3_code] INFO: grad_step=18100 loss=0.9107
+2026-09-18 11:12:44,674 [dqn_version3_1_mode3_3_code] INFO: Round 65937; mode=3; epsilon=0.0000; coins=5; reward=222.72; buffer=19124; grad_steps=18125; bombs=24; crates=61; useless_bombs=0; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:12:45,671 [dqn_version3_1_mode3_3_code] INFO: grad_step=18200 loss=0.6802
+2026-09-18 11:12:47,524 [dqn_version3_1_mode3_3_code] INFO: grad_step=18300 loss=3.1933
+2026-09-18 11:12:49,234 [dqn_version3_1_mode3_3_code] INFO: grad_step=18400 loss=0.7729
+2026-09-18 11:12:51,247 [dqn_version3_1_mode3_3_code] INFO: grad_step=18500 loss=1.3854
+2026-09-18 11:12:51,959 [dqn_version3_1_mode3_3_code] INFO: Round 65938; mode=3; epsilon=0.0000; coins=8; reward=588.06; buffer=19525; grad_steps=18526; bombs=53; crates=93; useless_bombs=20; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:12:52,984 [dqn_version3_1_mode3_3_code] INFO: grad_step=18600 loss=0.6255
+2026-09-18 11:12:55,517 [dqn_version3_1_mode3_3_code] INFO: grad_step=18700 loss=0.9628
+2026-09-18 11:12:57,954 [dqn_version3_1_mode3_3_code] INFO: grad_step=18800 loss=1.0944
+2026-09-18 11:12:59,786 [dqn_version3_1_mode3_3_code] INFO: grad_step=18900 loss=0.9735
+2026-09-18 11:13:00,392 [dqn_version3_1_mode3_3_code] INFO: Round 65939; mode=3; epsilon=0.0000; coins=4; reward=439.31; buffer=19926; grad_steps=18927; bombs=53; crates=64; useless_bombs=31; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:13:01,478 [dqn_version3_1_mode3_3_code] INFO: grad_step=19000 loss=1.2682
+2026-09-18 11:13:03,490 [dqn_version3_1_mode3_3_code] INFO: grad_step=19100 loss=0.7502
+2026-09-18 11:13:06,350 [dqn_version3_1_mode3_3_code] INFO: grad_step=19200 loss=0.8112
+2026-09-18 11:13:08,692 [dqn_version3_1_mode3_3_code] INFO: grad_step=19300 loss=0.5824
+2026-09-18 11:13:09,128 [dqn_version3_1_mode3_3_code] INFO: Round 65940; mode=3; epsilon=0.0000; coins=6; reward=526.10; buffer=20327; grad_steps=19328; bombs=56; crates=78; useless_bombs=27; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:13:09,840 [dqn_version3_1_mode3_3_code] INFO: grad_step=19400 loss=0.4603
+2026-09-18 11:13:11,505 [dqn_version3_1_mode3_3_code] INFO: grad_step=19500 loss=0.4525
+2026-09-18 11:13:12,819 [dqn_version3_1_mode3_3_code] INFO: Round 65941; mode=3; epsilon=0.0000; coins=8; reward=403.95; buffer=20574; grad_steps=19575; bombs=31; crates=75; useless_bombs=5; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:13:13,004 [dqn_version3_1_mode3_3_code] INFO: grad_step=19600 loss=0.5441
+2026-09-18 11:13:14,144 [dqn_version3_1_mode3_3_code] INFO: grad_step=19700 loss=0.8047
+2026-09-18 11:13:16,141 [dqn_version3_1_mode3_3_code] INFO: grad_step=19800 loss=0.8236
+2026-09-18 11:13:18,485 [dqn_version3_1_mode3_3_code] INFO: grad_step=19900 loss=2.1575
+2026-09-18 11:13:19,783 [dqn_version3_1_mode3_3_code] INFO: Round 65942; mode=3; epsilon=0.0000; coins=6; reward=528.83; buffer=20975; grad_steps=19976; bombs=55; crates=95; useless_bombs=27; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:13:19,968 [dqn_version3_1_mode3_3_code] INFO: grad_step=20000 loss=0.8933
+2026-09-18 11:13:20,282 [dqn_version3_1_mode3_3_code] INFO: Round 65943; mode=3; epsilon=0.0000; coins=2; reward=20.45; buffer=21031; grad_steps=20032; bombs=7; crates=24; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:13:20,957 [dqn_version3_1_mode3_3_code] INFO: grad_step=20100 loss=1.1391
+2026-09-18 11:13:23,034 [dqn_version3_1_mode3_3_code] INFO: grad_step=20200 loss=1.0437
+2026-09-18 11:13:25,388 [dqn_version3_1_mode3_3_code] INFO: grad_step=20300 loss=0.6404
+2026-09-18 11:13:27,528 [dqn_version3_1_mode3_3_code] INFO: grad_step=20400 loss=0.6132
+2026-09-18 11:13:28,227 [dqn_version3_1_mode3_3_code] INFO: Round 65944; mode=3; epsilon=0.0000; coins=8; reward=495.02; buffer=21432; grad_steps=20433; bombs=54; crates=75; useless_bombs=31; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:13:29,038 [dqn_version3_1_mode3_3_code] INFO: grad_step=20500 loss=0.6841
+2026-09-18 11:13:30,903 [dqn_version3_1_mode3_3_code] INFO: grad_step=20600 loss=0.3040
+2026-09-18 11:13:33,337 [dqn_version3_1_mode3_3_code] INFO: grad_step=20700 loss=0.8690
+2026-09-18 11:13:35,708 [dqn_version3_1_mode3_3_code] INFO: grad_step=20800 loss=1.6288
+2026-09-18 11:13:36,541 [dqn_version3_1_mode3_3_code] INFO: Round 65945; mode=3; epsilon=0.0000; coins=6; reward=512.19; buffer=21833; grad_steps=20834; bombs=53; crates=67; useless_bombs=30; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:13:37,371 [dqn_version3_1_mode3_3_code] INFO: grad_step=20900 loss=0.4706
+2026-09-18 11:13:39,253 [dqn_version3_1_mode3_3_code] INFO: grad_step=21000 loss=0.9784
+2026-09-18 11:13:41,518 [dqn_version3_1_mode3_3_code] INFO: Round 65946; mode=3; epsilon=0.0000; coins=5; reward=264.72; buffer=22083; grad_steps=21084; bombs=34; crates=77; useless_bombs=8; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:13:41,697 [dqn_version3_1_mode3_3_code] INFO: grad_step=21100 loss=0.5045
+2026-09-18 11:13:43,461 [dqn_version3_1_mode3_3_code] INFO: grad_step=21200 loss=0.6509
+2026-09-18 11:13:45,690 [dqn_version3_1_mode3_3_code] INFO: grad_step=21300 loss=0.9821
+2026-09-18 11:13:47,769 [dqn_version3_1_mode3_3_code] INFO: grad_step=21400 loss=0.7306
+2026-09-18 11:13:47,843 [dqn_version3_1_mode3_3_code] WARNING: BOMB SAFETY MISMATCH position=(np.int64(1), np.int64(1)) predicted_crates=0 pre_safe=False safe_dirs_before={'UP': False, 'DOWN': False, 'LEFT': False, 'RIGHT': False} safe_after_drop=True bombs_before=[] bombs_after=[((np.int64(1), np.int64(1)), 3)]
+2026-09-18 11:13:49,850 [dqn_version3_1_mode3_3_code] INFO: Round 65947; mode=3; epsilon=0.0000; coins=3; reward=355.72; buffer=22479; grad_steps=21480; bombs=54; crates=69; useless_bombs=29; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:13:50,094 [dqn_version3_1_mode3_3_code] INFO: grad_step=21500 loss=0.8774
+2026-09-18 11:13:51,747 [dqn_version3_1_mode3_3_code] INFO: grad_step=21600 loss=0.4863
+2026-09-18 11:13:53,311 [dqn_version3_1_mode3_3_code] INFO: grad_step=21700 loss=0.6697
+2026-09-18 11:13:55,017 [dqn_version3_1_mode3_3_code] INFO: grad_step=21800 loss=0.6262
+2026-09-18 11:13:56,434 [dqn_version3_1_mode3_3_code] INFO: Round 65948; mode=3; epsilon=0.0000; coins=9; reward=616.66; buffer=22880; grad_steps=21881; bombs=55; crates=113; useless_bombs=15; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:13:56,571 [dqn_version3_1_mode3_3_code] INFO: grad_step=21900 loss=0.6246
+2026-09-18 11:13:57,806 [dqn_version3_1_mode3_3_code] INFO: grad_step=22000 loss=0.6756
+2026-09-18 11:13:59,381 [dqn_version3_1_mode3_3_code] INFO: grad_step=22100 loss=0.5149
+2026-09-18 11:14:01,156 [dqn_version3_1_mode3_3_code] INFO: Round 65949; mode=3; epsilon=0.0000; coins=7; reward=474.73; buffer=23188; grad_steps=22189; bombs=38; crates=93; useless_bombs=6; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:14:01,259 [dqn_version3_1_mode3_3_code] INFO: grad_step=22200 loss=0.6593
+2026-09-18 11:14:02,917 [dqn_version3_1_mode3_3_code] INFO: grad_step=22300 loss=0.7881
+2026-09-18 11:14:05,161 [dqn_version3_1_mode3_3_code] INFO: grad_step=22400 loss=0.9944
+2026-09-18 11:14:07,271 [dqn_version3_1_mode3_3_code] INFO: grad_step=22500 loss=1.4148
+2026-09-18 11:14:09,208 [dqn_version3_1_mode3_3_code] INFO: Round 65950; mode=3; epsilon=0.0000; coins=5; reward=426.00; buffer=23589; grad_steps=22590; bombs=53; crates=63; useless_bombs=30; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:14:09,311 [dqn_version3_1_mode3_3_code] INFO: grad_step=22600 loss=1.8505
+2026-09-18 11:14:10,844 [dqn_version3_1_mode3_3_code] INFO: grad_step=22700 loss=0.8292
+2026-09-18 11:14:13,194 [dqn_version3_1_mode3_3_code] INFO: grad_step=22800 loss=0.4201
+2026-09-18 11:14:15,355 [dqn_version3_1_mode3_3_code] INFO: grad_step=22900 loss=0.6541
+2026-09-18 11:14:17,311 [dqn_version3_1_mode3_3_code] INFO: Round 65951; mode=3; epsilon=0.0000; coins=4; reward=475.15; buffer=23990; grad_steps=22991; bombs=54; crates=68; useless_bombs=31; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:14:17,403 [dqn_version3_1_mode3_3_code] INFO: grad_step=23000 loss=0.8026
+2026-09-18 11:14:18,131 [dqn_version3_1_mode3_3_code] WARNING: BOMB SAFETY MISMATCH position=(np.int64(11), np.int64(13)) predicted_crates=5 pre_safe=True safe_dirs_before={'UP': True, 'DOWN': False, 'LEFT': False, 'RIGHT': False} safe_after_drop=False bombs_before=[] bombs_after=[((np.int64(11), np.int64(13)), 3)]
+2026-09-18 11:14:18,210 [dqn_version3_1_mode3_3_code] INFO: Round 65952; mode=3; epsilon=0.0000; coins=4; reward=60.33; buffer=24052; grad_steps=23053; bombs=8; crates=25; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:14:18,807 [dqn_version3_1_mode3_3_code] INFO: grad_step=23100 loss=0.9878
+2026-09-18 11:14:20,505 [dqn_version3_1_mode3_3_code] INFO: grad_step=23200 loss=1.6873
+2026-09-18 11:14:22,829 [dqn_version3_1_mode3_3_code] INFO: grad_step=23300 loss=0.9206
+2026-09-18 11:14:25,170 [dqn_version3_1_mode3_3_code] INFO: grad_step=23400 loss=0.5144
+2026-09-18 11:14:26,348 [dqn_version3_1_mode3_3_code] INFO: Round 65953; mode=3; epsilon=0.0000; coins=6; reward=486.26; buffer=24453; grad_steps=23454; bombs=53; crates=79; useless_bombs=23; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:14:26,890 [dqn_version3_1_mode3_3_code] INFO: grad_step=23500 loss=0.5357
+2026-09-18 11:14:28,820 [dqn_version3_1_mode3_3_code] INFO: grad_step=23600 loss=0.5341
+2026-09-18 11:14:31,163 [dqn_version3_1_mode3_3_code] INFO: grad_step=23700 loss=1.0231
+2026-09-18 11:14:33,523 [dqn_version3_1_mode3_3_code] INFO: grad_step=23800 loss=0.5603
+2026-09-18 11:14:34,886 [dqn_version3_1_mode3_3_code] INFO: Round 65954; mode=3; epsilon=0.0000; coins=6; reward=445.89; buffer=24854; grad_steps=23855; bombs=54; crates=66; useless_bombs=30; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:14:35,554 [dqn_version3_1_mode3_3_code] INFO: grad_step=23900 loss=2.0988
+2026-09-18 11:14:37,250 [dqn_version3_1_mode3_3_code] INFO: grad_step=24000 loss=1.1108
+2026-09-18 11:14:37,512 [dqn_version3_1_mode3_3_code] WARNING: BOMB SAFETY MISMATCH position=(np.int64(5), np.int64(13)) predicted_crates=3 pre_safe=True safe_dirs_before={'UP': True, 'DOWN': False, 'LEFT': False, 'RIGHT': False} safe_after_drop=False bombs_before=[] bombs_after=[((np.int64(5), np.int64(13)), 3)]
+2026-09-18 11:14:37,572 [dqn_version3_1_mode3_3_code] INFO: Round 65955; mode=3; epsilon=0.0000; coins=5; reward=191.98; buffer=25020; grad_steps=24021; bombs=21; crates=58; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:14:38,413 [dqn_version3_1_mode3_3_code] INFO: grad_step=24100 loss=0.9165
+2026-09-18 11:14:40,774 [dqn_version3_1_mode3_3_code] INFO: grad_step=24200 loss=2.0979
+2026-09-18 11:14:40,781 [dqn_version3_1_mode3_3_code] WARNING: BOMB SAFETY MISMATCH position=(np.int64(3), np.int64(7)) predicted_crates=0 pre_safe=True safe_dirs_before={'UP': True, 'DOWN': True, 'LEFT': False, 'RIGHT': False} safe_after_drop=False bombs_before=[((np.int64(5), np.int64(7)), 3)] bombs_after=[((np.int64(5), np.int64(7)), 2), ((np.int64(3), np.int64(7)), 3)]
+2026-09-18 11:14:42,575 [dqn_version3_1_mode3_3_code] INFO: grad_step=24300 loss=0.8647
+2026-09-18 11:14:44,616 [dqn_version3_1_mode3_3_code] INFO: grad_step=24400 loss=1.2601
+2026-09-18 11:14:45,028 [dqn_version3_1_mode3_3_code] INFO: Round 65956; mode=3; epsilon=0.0000; coins=7; reward=511.98; buffer=25421; grad_steps=24422; bombs=52; crates=72; useless_bombs=26; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:14:45,984 [dqn_version3_1_mode3_3_code] INFO: grad_step=24500 loss=0.6396
+2026-09-18 11:14:48,565 [dqn_version3_1_mode3_3_code] INFO: grad_step=24600 loss=0.3860
+2026-09-18 11:14:48,787 [dqn_version3_1_mode3_3_code] INFO: Round 65957; mode=3; epsilon=0.0000; coins=4; reward=203.62; buffer=25614; grad_steps=24615; bombs=26; crates=58; useless_bombs=7; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:14:49,695 [dqn_version3_1_mode3_3_code] INFO: grad_step=24700 loss=0.5472
+2026-09-18 11:14:51,884 [dqn_version3_1_mode3_3_code] INFO: grad_step=24800 loss=1.8775
+2026-09-18 11:14:54,097 [dqn_version3_1_mode3_3_code] INFO: [survivability-debug] death #30: 106 bomb-threat steps, ever unsurvivable: True, PENALTY_LOST_ESCAPE_ROUTE fired: True. Last steps (deadline, before, after, action, reward): [(3, True, True, np.str_('LEFT'), 0.5), (2, True, True, np.str_('LEFT'), 0.5), (1, True, True, np.str_('UP'), 0.5), (3, True, True, np.str_('UP'), 0.5), (2, True, True, np.str_('UP'), 0.5), (1, True, False, np.str_('RIGHT'), -20.0)]
+2026-09-18 11:14:54,097 [dqn_version3_1_mode3_3_code] INFO: Round 65958; mode=3; epsilon=0.0000; coins=6; reward=283.27; buffer=25893; grad_steps=24894; bombs=34; crates=66; useless_bombs=12; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:14:54,159 [dqn_version3_1_mode3_3_code] INFO: grad_step=24900 loss=1.1235
+2026-09-18 11:14:55,551 [dqn_version3_1_mode3_3_code] INFO: grad_step=25000 loss=0.5447
+2026-09-18 11:14:58,049 [dqn_version3_1_mode3_3_code] INFO: grad_step=25100 loss=0.8861
+2026-09-18 11:15:00,696 [dqn_version3_1_mode3_3_code] INFO: grad_step=25200 loss=1.1953
+2026-09-18 11:15:02,627 [dqn_version3_1_mode3_3_code] INFO: Round 65959; mode=3; epsilon=0.0000; coins=6; reward=514.37; buffer=26294; grad_steps=25295; bombs=55; crates=62; useless_bombs=27; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:15:02,675 [dqn_version3_1_mode3_3_code] INFO: grad_step=25300 loss=0.9254
+2026-09-18 11:15:03,830 [dqn_version3_1_mode3_3_code] INFO: grad_step=25400 loss=0.6796
+2026-09-18 11:15:05,792 [dqn_version3_1_mode3_3_code] INFO: grad_step=25500 loss=1.2443
+2026-09-18 11:15:08,186 [dqn_version3_1_mode3_3_code] INFO: grad_step=25600 loss=0.7628
+2026-09-18 11:15:10,492 [dqn_version3_1_mode3_3_code] INFO: Round 65960; mode=3; epsilon=0.0000; coins=7; reward=482.85; buffer=26695; grad_steps=25696; bombs=53; crates=60; useless_bombs=29; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:15:10,549 [dqn_version3_1_mode3_3_code] INFO: grad_step=25700 loss=1.0164
+2026-09-18 11:15:12,063 [dqn_version3_1_mode3_3_code] INFO: grad_step=25800 loss=0.9695
+2026-09-18 11:15:13,960 [dqn_version3_1_mode3_3_code] INFO: grad_step=25900 loss=0.8992
+2026-09-18 11:15:16,204 [dqn_version3_1_mode3_3_code] INFO: grad_step=26000 loss=1.0835
+2026-09-18 11:15:18,348 [dqn_version3_1_mode3_3_code] INFO: Round 65961; mode=3; epsilon=0.0000; coins=8; reward=437.36; buffer=27093; grad_steps=26094; bombs=54; crates=76; useless_bombs=26; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:15:18,411 [dqn_version3_1_mode3_3_code] INFO: grad_step=26100 loss=0.9727
+2026-09-18 11:15:20,411 [dqn_version3_1_mode3_3_code] INFO: grad_step=26200 loss=0.6945
+2026-09-18 11:15:22,930 [dqn_version3_1_mode3_3_code] INFO: grad_step=26300 loss=0.7843
+2026-09-18 11:15:25,207 [dqn_version3_1_mode3_3_code] INFO: grad_step=26400 loss=0.4899
+2026-09-18 11:15:27,557 [dqn_version3_1_mode3_3_code] INFO: Round 65962; mode=3; epsilon=0.0000; coins=7; reward=518.79; buffer=27494; grad_steps=26495; bombs=54; crates=77; useless_bombs=25; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:15:27,623 [dqn_version3_1_mode3_3_code] INFO: grad_step=26500 loss=0.5868
+2026-09-18 11:15:29,063 [dqn_version3_1_mode3_3_code] INFO: Round 65963; mode=3; epsilon=0.0000; coins=3; reward=66.98; buffer=27584; grad_steps=26585; bombs=12; crates=38; useless_bombs=0; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:15:29,241 [dqn_version3_1_mode3_3_code] INFO: grad_step=26600 loss=2.2392
+2026-09-18 11:15:30,970 [dqn_version3_1_mode3_3_code] INFO: grad_step=26700 loss=1.1214
+2026-09-18 11:15:33,490 [dqn_version3_1_mode3_3_code] INFO: grad_step=26800 loss=0.5554
+2026-09-18 11:15:34,265 [dqn_version3_1_mode3_3_code] INFO: Round 65964; mode=3; epsilon=0.0000; coins=5; reward=300.12; buffer=27840; grad_steps=26841; bombs=33; crates=76; useless_bombs=6; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:15:34,851 [dqn_version3_1_mode3_3_code] INFO: grad_step=26900 loss=0.8235
+2026-09-18 11:15:35,044 [dqn_version3_1_mode3_3_code] INFO: Round 65965; mode=3; epsilon=0.0000; coins=1; reward=74.27; buffer=27915; grad_steps=26916; bombs=10; crates=33; useless_bombs=1; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:15:35,885 [dqn_version3_1_mode3_3_code] INFO: grad_step=27000 loss=0.5521
+2026-09-18 11:15:37,589 [dqn_version3_1_mode3_3_code] INFO: grad_step=27100 loss=0.5845
+2026-09-18 11:15:39,607 [dqn_version3_1_mode3_3_code] INFO: grad_step=27200 loss=1.0877
+2026-09-18 11:15:41,574 [dqn_version3_1_mode3_3_code] INFO: grad_step=27300 loss=1.4416
+2026-09-18 11:15:41,871 [dqn_version3_1_mode3_3_code] INFO: Round 65966; mode=3; epsilon=0.0000; coins=5; reward=483.46; buffer=28316; grad_steps=27317; bombs=53; crates=82; useless_bombs=27; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:15:42,681 [dqn_version3_1_mode3_3_code] INFO: grad_step=27400 loss=0.7892
+2026-09-18 11:15:43,808 [dqn_version3_1_mode3_3_code] INFO: Round 65967; mode=3; epsilon=0.0000; coins=2; reward=183.17; buffer=28461; grad_steps=27462; bombs=21; crates=48; useless_bombs=0; deaths=1; killed_self=0; got_killed=1
+2026-09-18 11:15:44,124 [dqn_version3_1_mode3_3_code] INFO: grad_step=27500 loss=0.7467
+2026-09-18 11:15:45,905 [dqn_version3_1_mode3_3_code] INFO: grad_step=27600 loss=0.7615
+2026-09-18 11:15:48,155 [dqn_version3_1_mode3_3_code] INFO: grad_step=27700 loss=0.7983
+2026-09-18 11:15:50,530 [dqn_version3_1_mode3_3_code] INFO: grad_step=27800 loss=0.8025
+2026-09-18 11:15:52,169 [dqn_version3_1_mode3_3_code] INFO: Round 65968; mode=3; epsilon=0.0000; coins=8; reward=575.22; buffer=28862; grad_steps=27863; bombs=53; crates=80; useless_bombs=27; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:15:52,700 [dqn_version3_1_mode3_3_code] INFO: grad_step=27900 loss=1.5039
+2026-09-18 11:15:54,928 [dqn_version3_1_mode3_3_code] INFO: grad_step=28000 loss=1.3492
+2026-09-18 11:15:56,890 [dqn_version3_1_mode3_3_code] INFO: grad_step=28100 loss=0.3939
+2026-09-18 11:15:58,751 [dqn_version3_1_mode3_3_code] INFO: grad_step=28200 loss=0.7123
+2026-09-18 11:16:00,152 [dqn_version3_1_mode3_3_code] INFO: Round 65969; mode=3; epsilon=0.0000; coins=5; reward=418.20; buffer=29263; grad_steps=28264; bombs=52; crates=53; useless_bombs=29; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:16:00,538 [dqn_version3_1_mode3_3_code] INFO: grad_step=28300 loss=2.1986
+2026-09-18 11:16:02,399 [dqn_version3_1_mode3_3_code] INFO: grad_step=28400 loss=1.1196
+2026-09-18 11:16:03,010 [dqn_version3_1_mode3_3_code] WARNING: BOMB SAFETY MISMATCH position=(np.int64(3), np.int64(9)) predicted_crates=4 pre_safe=True safe_dirs_before={'UP': False, 'DOWN': True, 'LEFT': False, 'RIGHT': False} safe_after_drop=False bombs_before=[] bombs_after=[((np.int64(3), np.int64(9)), 3)]
+2026-09-18 11:16:04,674 [dqn_version3_1_mode3_3_code] INFO: grad_step=28500 loss=1.1494
+2026-09-18 11:16:07,075 [dqn_version3_1_mode3_3_code] INFO: grad_step=28600 loss=1.2858
+2026-09-18 11:16:08,546 [dqn_version3_1_mode3_3_code] INFO: Round 65970; mode=3; epsilon=0.0000; coins=3; reward=457.51; buffer=29664; grad_steps=28665; bombs=52; crates=77; useless_bombs=25; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:16:08,903 [dqn_version3_1_mode3_3_code] INFO: grad_step=28700 loss=2.0690
+2026-09-18 11:16:10,641 [dqn_version3_1_mode3_3_code] INFO: grad_step=28800 loss=0.2987
+2026-09-18 11:16:12,943 [dqn_version3_1_mode3_3_code] INFO: grad_step=28900 loss=0.5973
+2026-09-18 11:16:15,216 [dqn_version3_1_mode3_3_code] INFO: grad_step=29000 loss=1.0118
+2026-09-18 11:16:16,665 [dqn_version3_1_mode3_3_code] INFO: Round 65971; mode=3; epsilon=0.0000; coins=4; reward=488.00; buffer=30065; grad_steps=29066; bombs=50; crates=71; useless_bombs=24; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:16:17,091 [dqn_version3_1_mode3_3_code] INFO: grad_step=29100 loss=1.4577
+2026-09-18 11:16:19,295 [dqn_version3_1_mode3_3_code] INFO: grad_step=29200 loss=0.7773
+2026-09-18 11:16:21,448 [dqn_version3_1_mode3_3_code] INFO: Round 65972; mode=3; epsilon=0.0000; coins=6; reward=266.35; buffer=30280; grad_steps=29281; bombs=27; crates=63; useless_bombs=1; deaths=1; killed_self=1; got_killed=0
+2026-09-18 11:16:21,648 [dqn_version3_1_mode3_3_code] INFO: grad_step=29300 loss=1.2278
+2026-09-18 11:16:22,805 [dqn_version3_1_mode3_3_code] INFO: grad_step=29400 loss=0.9256
+2026-09-18 11:16:24,034 [dqn_version3_1_mode3_3_code] INFO: grad_step=29500 loss=1.0551
+2026-09-18 11:16:26,913 [dqn_version3_1_mode3_3_code] INFO: grad_step=29600 loss=0.5501
+2026-09-18 11:16:29,225 [dqn_version3_1_mode3_3_code] INFO: Round 65973; mode=3; epsilon=0.0000; coins=4; reward=-30.33; buffer=30681; grad_steps=29682; bombs=29; crates=29; useless_bombs=15; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:16:29,363 [dqn_version3_1_mode3_3_code] INFO: grad_step=29700 loss=0.5787
+2026-09-18 11:16:30,671 [dqn_version3_1_mode3_3_code] INFO: grad_step=29800 loss=0.6029
+2026-09-18 11:16:33,205 [dqn_version3_1_mode3_3_code] INFO: grad_step=29900 loss=1.0016
+2026-09-18 11:16:35,875 [dqn_version3_1_mode3_3_code] INFO: grad_step=30000 loss=0.5907
+2026-09-18 11:16:37,728 [dqn_version3_1_mode3_3_code] INFO: Round 65974; mode=3; epsilon=0.0000; coins=6; reward=548.76; buffer=31082; grad_steps=30083; bombs=53; crates=74; useless_bombs=28; deaths=0; killed_self=0; got_killed=0
+2026-09-18 11:16:37,952 [dqn_version3_1_mode3_3_code] INFO: grad_step=30100 loss=0.7523
+2026-09-18 11:16:39,143 [dqn_version3_1_mode3_3_code] INFO: Round 65975; mode=3; epsilon=0.0000; coins=1; reward=82.64; buffer=31174; grad_steps=30175; bombs=13; crates=44; useless_bombs=0; deaths=1; killed_self=1; got_killed=0

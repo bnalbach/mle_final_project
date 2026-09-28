@@ -1,5 +1,4 @@
 # qtable-mode1
-
 === coin_solo  [coin-heaven]  vs none  (n=100) ===
     coins              47.7/50
     collect_rate       0.95
@@ -621,8 +620,8 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
 
 Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_165340.json
 
-# dqn-mode3-multi_opponents
 
+# dqn-mode3-multi_opponents
 === move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
     survival_rate      1.00
     suicides/round     0.00
@@ -696,5 +695,515 @@ Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/r
 
 Wrote /home/jonathan/Documents/SS26/mle/final-project-test-folder/bomberman_rl/results/eval_20260923_165649.json
 
+
+# dqn-mode3-explore
+=== move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         0.39
+    action_loop_rate   0.154
+    pos_loop_rate      0.121
+    invalid_rate       0.000
+    wait_rate          0.002
+    tile_diversity     0.60
+    coins              49.1
+
+=== move_vs_peaceful  [classic]  vs peaceful_agent, peaceful_agent  (n=100) ===
+    survival_rate      0.97
+    suicides/round     0.03
+    stuck_rate         0.64
+    action_loop_rate   0.107
+    pos_loop_rate      0.071
+    invalid_rate       0.000
+    wait_rate          0.049
+    tile_diversity     0.33
+    coins              8.6
+
+=== coin_solo  [coin-heaven]  vs none  (n=100) ===
+    coins              49.1/50
+    collect_rate       0.98
+    coins/step         0.224
+    steps_alive        219
+    stuck_rate         0.39
+    suicides/round     0.00
+    invalid_rate       0.000
+
+=== coin_vs_collectors  [coin-heaven]  vs coin_collector_agent, coin_collector_agent, coin_collector_agent  (n=100) ===
+    coin_share         0.21
+    coins              10.8
+    win_rate           0.08
+    stuck_rate         0.97
+    survival_rate      0.97
+
+=== combat_3rule  [classic]  vs rule_based_agent, rule_based_agent, rule_based_agent  (n=100) ===
+    win_rate           0.28
+    mean_rank          2.04
+    score              3.68
+    kills/round        0.18
+    suicides/round     0.33
+    survival_rate      0.53
+    steps_survived     286
+    stuck_rate         0.49
+    coin_share         0.31
+
+=== combat_mixed  [classic]  vs rule_based_agent, coin_collector_agent, random_agent  (n=100) ===
+    win_rate           0.50
+    mean_rank          1.62
+    score              4.34
+    kills/round        0.11
+    suicides/round     0.33
+    survival_rate      0.56
+    steps_survived     300
+    stuck_rate         0.48
+    coin_share         0.42
+
+=== combat_vs_oldmodel  [classic]  vs rule_based_agent, rule_based_agent, user_agent  (n=100) ===
+    win_rate           0.27
+    mean_rank          2.21
+    score              3.54
+    kills/round        0.19
+    suicides/round     0.29
+    survival_rate      0.49
+    steps_survived     272
+    stuck_rate         0.52
+    coin_share         0.29
+
+
+# dqn-mode3-tiebreak
+=== move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         0.13
+    action_loop_rate   0.040
+    pos_loop_rate      0.035
+    invalid_rate       0.000
+    wait_rate          0.000
+    tile_diversity     0.77
+    coins              50.0
+
+=== move_vs_peaceful  [classic]  vs peaceful_agent, peaceful_agent  (n=100) ===
+    survival_rate      0.97
+    suicides/round     0.03
+    stuck_rate         0.43
+    action_loop_rate   0.044
+    pos_loop_rate      0.021
+    invalid_rate       0.000
+    wait_rate          0.036
+    tile_diversity     0.35
+    coins              8.8
+
+=== coin_solo  [coin-heaven]  vs none  (n=100) ===
+    coins              50.0/50
+    collect_rate       1.00
+    coins/step         0.327
+    steps_alive        153
+    stuck_rate         0.13
+    suicides/round     0.00
+    invalid_rate       0.000
+
+=== coin_vs_collectors  [coin-heaven]  vs coin_collector_agent, coin_collector_agent, coin_collector_agent  (n=100) ===
+    coin_share         0.22
+    coins              11.2
+    win_rate           0.09
+    stuck_rate         0.99
+    survival_rate      0.99
+
+=== combat_3rule  [classic]  vs rule_based_agent, rule_based_agent, rule_based_agent  (n=100) ===
+    win_rate           0.31
+    mean_rank          2.01
+    score              3.52
+    kills/round        0.11
+    suicides/round     0.29
+    survival_rate      0.64
+    steps_survived     317
+    stuck_rate         0.58
+    coin_share         0.33
+
+=== combat_mixed  [classic]  vs rule_based_agent, coin_collector_agent, random_agent  (n=100) ===
+    win_rate           0.49
+    mean_rank          1.58
+    score              4.55
+    kills/round        0.14
+    suicides/round     0.27
+    survival_rate      0.66
+    steps_survived     321
+    stuck_rate         0.48
+    coin_share         0.43
+
+=== combat_vs_oldmodel  [classic]  vs rule_based_agent, rule_based_agent, user_agent  (n=100) ===
+    win_rate           0.27
+    mean_rank          2.11
+    score              3.70
+    kills/round        0.23
+    suicides/round     0.37
+    survival_rate      0.45
+    steps_survived     283
+    stuck_rate         0.44
+    coin_share         0.28
+
+
+# dqn-mode3-hunt
+=== move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         0.60
+    action_loop_rate   0.283
+    pos_loop_rate      0.262
+    invalid_rate       0.001
+    wait_rate          0.020
+    tile_diversity     0.47
+    coins              50.0
+
+=== move_vs_peaceful  [classic]  vs peaceful_agent, peaceful_agent  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         0.68
+    action_loop_rate   0.264
+    pos_loop_rate      0.243
+    invalid_rate       0.000
+    wait_rate          0.042
+    tile_diversity     0.23
+    coins              6.3
+
+=== coin_solo  [coin-heaven]  vs none  (n=100) ===
+    coins              50.0/50
+    collect_rate       1.00
+    coins/step         0.166
+    steps_alive        302
+    stuck_rate         0.60
+    suicides/round     0.00
+    invalid_rate       0.001
+
+=== coin_vs_collectors  [coin-heaven]  vs coin_collector_agent, coin_collector_agent, coin_collector_agent  (n=100) ===
+    coin_share         0.21
+    coins              10.6
+    win_rate           0.06
+    stuck_rate         0.97
+    survival_rate      0.97
+
+=== combat_3rule  [classic]  vs rule_based_agent, rule_based_agent, rule_based_agent  (n=100) ===
+    win_rate           0.29
+    mean_rank          1.97
+    score              3.76
+    kills/round        0.18
+    suicides/round     0.35
+    survival_rate      0.50
+    steps_survived     275
+    stuck_rate         0.33
+    coin_share         0.32
+
+=== combat_mixed  [classic]  vs rule_based_agent, coin_collector_agent, random_agent  (n=100) ===
+    win_rate           0.33
+    mean_rank          1.72
+    score              3.92
+    kills/round        0.13
+    suicides/round     0.36
+    survival_rate      0.56
+    steps_survived     295
+    stuck_rate         0.45
+    coin_share         0.37
+
+=== combat_vs_oldmodel  [classic]  vs rule_based_agent, rule_based_agent, user_agent  (n=100) ===
+    win_rate           0.25
+    mean_rank          2.16
+    score              3.67
+    kills/round        0.24
+    suicides/round     0.38
+    survival_rate      0.42
+    steps_survived     249
+    stuck_rate         0.36
+    coin_share         0.27
+
+
+# dqn-mode3-4step-s1
+=== move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
+    survival_rate      0.00
+    suicides/round     1.00
+    stuck_rate         0.00
+    action_loop_rate   0.000
+    pos_loop_rate      0.000
+    invalid_rate       0.000
+    wait_rate          0.312
+    tile_diversity     0.69
+    coins              4.2
+
+=== move_vs_peaceful  [classic]  vs peaceful_agent, peaceful_agent  (n=100) ===
+    survival_rate      0.25
+    suicides/round     0.75
+    stuck_rate         0.25
+    action_loop_rate   0.250
+    pos_loop_rate      0.249
+    invalid_rate       0.000
+    wait_rate          0.750
+    tile_diversity     0.25
+    coins              0.0
+
+=== coin_solo  [coin-heaven]  vs none  (n=100) ===
+    coins              0.3/50
+    collect_rate       0.01
+    coins/step         0.001
+    steps_alive        372
+    stuck_rate         0.93
+    suicides/round     0.07
+    invalid_rate       0.000
+
+=== coin_vs_collectors  [coin-heaven]  vs coin_collector_agent, coin_collector_agent, coin_collector_agent  (n=100) ===
+    coin_share         0.03
+    coins              1.5
+    win_rate           0.00
+    stuck_rate         1.00
+    survival_rate      1.00
+
+=== combat_3rule  [classic]  vs rule_based_agent, rule_based_agent, rule_based_agent  (n=100) ===
+    win_rate           0.00
+    mean_rank          3.83
+    score              0.00
+    kills/round        0.00
+    suicides/round     0.97
+    survival_rate      0.00
+    steps_survived     18
+    stuck_rate         0.10
+    coin_share         0.00
+
+=== combat_mixed  [classic]  vs rule_based_agent, coin_collector_agent, random_agent  (n=100) ===
+    win_rate           0.00
+    mean_rank          2.97
+    score              0.00
+    kills/round        0.00
+    suicides/round     0.92
+    survival_rate      0.00
+    steps_survived     37
+    stuck_rate         0.25
+    coin_share         0.00
+
+=== combat_vs_oldmodel  [classic]  vs rule_based_agent, rule_based_agent, user_agent  (n=100) ===
+    win_rate           0.00
+    mean_rank          3.86
+    score              0.00
+    kills/round        0.00
+    suicides/round     1.00
+    survival_rate      0.00
+    steps_survived     4
+    stuck_rate         0.00
+    coin_share         0.00
+
+
+# dqn-mode3-4step-s2
+=== move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         1.00
+    action_loop_rate   0.959
+    pos_loop_rate      0.956
+    invalid_rate       0.000
+    wait_rate          0.000
+    tile_diversity     0.04
+    coins              4.2
+
+=== move_vs_peaceful  [classic]  vs peaceful_agent, peaceful_agent  (n=100) ===
+    survival_rate      0.84
+    suicides/round     0.16
+    stuck_rate         0.84
+    action_loop_rate   0.832
+    pos_loop_rate      0.830
+    invalid_rate       0.000
+    wait_rate          0.104
+    tile_diversity     0.06
+    coins              0.0
+
+=== coin_solo  [coin-heaven]  vs none  (n=100) ===
+    coins              2.6/50
+    collect_rate       0.05
+    coins/step         0.051
+    steps_alive        51
+    stuck_rate         0.17
+    suicides/round     0.91
+    invalid_rate       0.034
+
+=== coin_vs_collectors  [coin-heaven]  vs coin_collector_agent, coin_collector_agent, coin_collector_agent  (n=100) ===
+    coin_share         0.04
+    coins              1.8
+    win_rate           0.00
+    stuck_rate         0.46
+    survival_rate      0.29
+
+=== combat_3rule  [classic]  vs rule_based_agent, rule_based_agent, rule_based_agent  (n=100) ===
+    win_rate           0.00
+    mean_rank          3.82
+    score              0.01
+    kills/round        0.00
+    suicides/round     0.00
+    survival_rate      0.04
+    steps_survived     151
+    stuck_rate         1.00
+    coin_share         0.00
+
+=== combat_mixed  [classic]  vs rule_based_agent, coin_collector_agent, random_agent  (n=100) ===
+    win_rate           0.00
+    mean_rank          2.95
+    score              0.01
+    kills/round        0.00
+    suicides/round     0.04
+    survival_rate      0.07
+    steps_survived     181
+    stuck_rate         1.00
+    coin_share         0.00
+
+=== combat_vs_oldmodel  [classic]  vs rule_based_agent, rule_based_agent, user_agent  (n=100) ===
+    win_rate           0.00
+    mean_rank          3.83
+    score              0.00
+    kills/round        0.00
+    suicides/round     0.94
+    survival_rate      0.00
+    steps_survived     17
+    stuck_rate         0.12
+    coin_share         0.00
+
+
+# dqn-mode3-4step-s3
+=== move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         0.93
+    action_loop_rate   0.777
+    pos_loop_rate      0.777
+    invalid_rate       0.000
+    wait_rate          0.001
+    tile_diversity     0.18
+    coins              28.0
+
+=== move_vs_peaceful  [classic]  vs peaceful_agent, peaceful_agent  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         0.93
+    action_loop_rate   0.715
+    pos_loop_rate      0.715
+    invalid_rate       0.000
+    wait_rate          0.168
+    tile_diversity     0.07
+    coins              1.8
+
+=== coin_solo  [coin-heaven]  vs none  (n=100) ===
+    coins              28.0/50
+    collect_rate       0.56
+    coins/step         0.073
+    steps_alive        381
+    stuck_rate         0.93
+    suicides/round     0.00
+    invalid_rate       0.000
+
+=== coin_vs_collectors  [coin-heaven]  vs coin_collector_agent, coin_collector_agent, coin_collector_agent  (n=100) ===
+    coin_share         0.17
+    coins              8.4
+    win_rate           0.04
+    stuck_rate         0.98
+    survival_rate      0.98
+
+=== combat_3rule  [classic]  vs rule_based_agent, rule_based_agent, rule_based_agent  (n=100) ===
+    win_rate           0.20
+    mean_rank          2.37
+    score              3.32
+    kills/round        0.23
+    suicides/round     0.21
+    survival_rate      0.44
+    steps_survived     248
+    stuck_rate         0.33
+    coin_share         0.25
+
+=== combat_mixed  [classic]  vs rule_based_agent, coin_collector_agent, random_agent  (n=100) ===
+    win_rate           0.31
+    mean_rank          1.92
+    score              3.76
+    kills/round        0.22
+    suicides/round     0.13
+    survival_rate      0.65
+    steps_survived     316
+    stuck_rate         0.57
+    coin_share         0.32
+
+=== combat_vs_oldmodel  [classic]  vs rule_based_agent, rule_based_agent, user_agent  (n=100) ===
+    win_rate           0.14
+    mean_rank          2.49
+    score              2.64
+    kills/round        0.16
+    suicides/round     0.16
+    survival_rate      0.52
+    steps_survived     261
+    stuck_rate         0.48
+    coin_share         0.21
+
+
+# dqn-mode3-4step-s4
+=== move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         0.95
+    action_loop_rate   0.819
+    pos_loop_rate      0.818
+    invalid_rate       0.000
+    wait_rate          0.000
+    tile_diversity     0.15
+    coins              24.3
+
+=== move_vs_peaceful  [classic]  vs peaceful_agent, peaceful_agent  (n=100) ===
+    survival_rate      0.99
+    suicides/round     0.01
+    stuck_rate         0.87
+    action_loop_rate   0.674
+    pos_loop_rate      0.672
+    invalid_rate       0.000
+    wait_rate          0.171
+    tile_diversity     0.07
+    coins              1.9
+
+=== coin_solo  [coin-heaven]  vs none  (n=100) ===
+    coins              24.3/50
+    collect_rate       0.49
+    coins/step         0.063
+    steps_alive        387
+    stuck_rate         0.95
+    suicides/round     0.00
+    invalid_rate       0.000
+
+=== coin_vs_collectors  [coin-heaven]  vs coin_collector_agent, coin_collector_agent, coin_collector_agent  (n=100) ===
+    coin_share         0.20
+    coins              10.1
+    win_rate           0.07
+    stuck_rate         1.00
+    survival_rate      1.00
+
+=== combat_3rule  [classic]  vs rule_based_agent, rule_based_agent, rule_based_agent  (n=100) ===
+    win_rate           0.26
+    mean_rank          2.25
+    score              3.43
+    kills/round        0.26
+    suicides/round     0.28
+    survival_rate      0.47
+    steps_survived     257
+    stuck_rate         0.35
+    coin_share         0.25
+
+=== combat_mixed  [classic]  vs rule_based_agent, coin_collector_agent, random_agent  (n=100) ===
+    win_rate           0.28
+    mean_rank          1.92
+    score              3.72
+    kills/round        0.22
+    suicides/round     0.17
+    survival_rate      0.58
+    steps_survived     294
+    stuck_rate         0.52
+    coin_share         0.31
+
+=== combat_vs_oldmodel  [classic]  vs rule_based_agent, rule_based_agent, user_agent  (n=100) ===
+    win_rate           0.15
+    mean_rank          2.55
+    score              2.85
+    kills/round        0.21
+    suicides/round     0.11
+    survival_rate      0.40
+    steps_survived     255
+    stuck_rate         0.40
+    coin_share         0.20
 
 

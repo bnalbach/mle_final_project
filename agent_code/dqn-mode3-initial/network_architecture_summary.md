@@ -90,3 +90,76 @@ Auto-detected priority: `cuda` -> Intel Arc `xpu` -> `cpu`, via `_select_device(
 | Target network sync | Every 500 gradient steps |
 | Exploration | Epsilon-greedy (1.0 -> 0.05, decay 0.9995/round) with domain-specific action masking |
 | Gradient clipping | Max norm 10.0 |
+
+eval:
+=== move_solo_coinheaven  [coin-heaven]  vs none  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         0.13
+    action_loop_rate   0.040
+    pos_loop_rate      0.035
+    invalid_rate       0.000
+    wait_rate          0.000
+    tile_diversity     0.77
+    coins              50.0
+
+=== move_vs_peaceful  [classic]  vs peaceful_agent, peaceful_agent  (n=100) ===
+    survival_rate      1.00
+    suicides/round     0.00
+    stuck_rate         0.49
+    action_loop_rate   0.057
+    pos_loop_rate      0.025
+    invalid_rate       0.000
+    wait_rate          0.036
+    tile_diversity     0.34
+    coins              8.7
+
+=== coin_solo  [coin-heaven]  vs none  (n=100) ===
+    coins              50.0/50
+    collect_rate       1.00
+    coins/step         0.327
+    steps_alive        153
+    stuck_rate         0.13
+    suicides/round     0.00
+    invalid_rate       0.000
+
+=== coin_vs_collectors  [coin-heaven]  vs coin_collector_agent, coin_collector_agent, coin_collector_agent  (n=100) ===
+    coin_share         0.22
+    coins              11.2
+    win_rate           0.14
+    stuck_rate         0.99
+    survival_rate      0.99
+
+=== combat_3rule  [classic]  vs rule_based_agent, rule_based_agent, rule_based_agent  (n=100) ===
+    win_rate           0.38
+    mean_rank          1.89
+    score              4.01
+    kills/round        0.17
+    suicides/round     0.33
+    survival_rate      0.56
+    steps_survived     298
+    stuck_rate         0.44
+    coin_share         0.35
+
+=== combat_mixed  [classic]  vs rule_based_agent, coin_collector_agent, random_agent  (n=100) ===
+    win_rate           0.41
+    mean_rank          1.70
+    score              4.25
+    kills/round        0.11
+    suicides/round     0.25
+    survival_rate      0.61
+    steps_survived     294
+    stuck_rate         0.49
+    coin_share         0.41
+
+=== combat_vs_oldmodel  [classic]  vs rule_based_agent, rule_based_agent, user_agent  (n=100) ===
+    win_rate           0.29
+    mean_rank          2.12
+    score              4.03
+    kills/round        0.30
+    suicides/round     0.29
+    survival_rate      0.53
+    steps_survived     273
+    stuck_rate         0.33
+    coin_share         0.28
+

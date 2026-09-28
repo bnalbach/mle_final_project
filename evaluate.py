@@ -368,13 +368,13 @@ def main():
 
     results = {}
     for cfg in suites:
-        log_dir = os.path.join(PROJECT_ROOT, "logs", "eval", cfg["name"])
+        log_dir = os.path.join(PROJECT_ROOT, "logs", args.agent, "eval", cfg["name"])
         t0 = time.time()
         print(f"[running] {cfg['name']} ...", flush=True)
         agg, per_round = run_config(cfg, args, log_dir)
         results[cfg["name"]] = (cfg, agg, per_round)
         print(f"[done]    {cfg['name']} in {time.time() - t0:.1f}s "
-              f"(log: logs/eval/{cfg['name']}/game.log)", flush=True)
+              f"(log: logs/{args.agent}/eval/{cfg['name']}/game.log)", flush=True)
 
     print_report(results)
 

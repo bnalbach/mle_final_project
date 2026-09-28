@@ -90,3 +90,4 @@ Auto-detected priority: `cuda` -> Intel Arc `xpu` -> `cpu`, via `_select_device(
 | Target network sync | Every 500 gradient steps |
 | Exploration | Epsilon-greedy (1.0 -> 0.05, decay 0.9995/round) with domain-specific action masking |
 | Gradient clipping | Max norm 10.0 |
+
